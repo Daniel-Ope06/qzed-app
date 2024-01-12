@@ -94,6 +94,23 @@
             ],
             "scripts": []
           }
+        },
+        "deploy": {
+          "builder": "@angular/fire:deploy",
+          "options": {
+            "version": 2
+          },
+          "configurations": {
+            "production": {
+              "buildTarget": "qzed-app:build:production",
+              "serveTarget": "qzed-app:serve:production"
+            },
+            "development": {
+              "buildTarget": "qzed-app:build:development",
+              "serveTarget": "qzed-app:serve:development"
+            }
+          },
+          "defaultConfiguration": "production"
         }
       }
     }

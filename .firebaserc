@@ -1,5 +1,14 @@
 {
   "projects": {
     "default": "qzedanswers"
+  },
+  "targets": {
+    "qzedanswers": {
+      "hosting": {
+        "qzed-app": [
+          "qzedanswers"
+        ]
+      }
+    }
   }
 }
