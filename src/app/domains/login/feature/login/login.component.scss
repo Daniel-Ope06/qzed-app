@@ -1,0 +1,38 @@
+.flex-col {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5rem;
+}
+
+.btn {
+    font-size: 1.25rem;
+    font-weight: 600;
+    cursor: pointer;
+    width: 100%;
+    padding: 1rem 0;
+    border-radius: 0.5rem;
+    transition: all 0.2s ease-in-out;
+}
+
+.blue {
+    color: #fff;
+    border: 2px solid #002B59;
+    background-color: #002B59;
+
+    &:hover {
+        color: #002B59;
+        background-color: #fff;
+    }
+}
+
+.orange {
+    color: #fff;
+    border: 2px solid #FF7F00;
+    background-color: #FF7F00;
+
+    &:hover {
+        color: #FF7F00;
+        background-color: #fff;
+    }
+}
