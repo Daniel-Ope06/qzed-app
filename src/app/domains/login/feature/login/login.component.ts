@@ -28,8 +28,9 @@ export class LoginComponent implements OnInit {
     const userRef = doc(this.firestore, `users/${result.uid}`);
     const user = {
       uid: result.uid!,
-      displayName: result.displayName!,
+      email: result.email!,
       photoURL: result.photoURL!,
+      displayName: result.displayName!,
     };
     return setDoc(userRef, { user }, { merge: true });
   }
