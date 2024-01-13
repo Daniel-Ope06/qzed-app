@@ -1,12 +1,12 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 
 @Component({
-  selector: 'app-study-page',
+  selector: 'study-page',
   standalone: true,
   imports: [],
   templateUrl: './study-page.component.html',
   styleUrl: './study-page.component.scss'
 })
 export class StudyPageComponent {
-
+  @Input() uid: string = '';
 }

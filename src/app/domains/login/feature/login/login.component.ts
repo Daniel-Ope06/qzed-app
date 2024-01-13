@@ -1,5 +1,7 @@
-import { Component, inject } from '@angular/core';
-import { Auth, GoogleAuthProvider, signInAnonymously, signInWithRedirect } from '@angular/fire/auth';
+import { Component, OnInit, inject } from '@angular/core';
+import { Router } from '@angular/router';
+import { Auth, GoogleAuthProvider, User, getRedirectResult, signInAnonymously, signInWithRedirect } from '@angular/fire/auth';
+import { Firestore, doc, setDoc } from '@angular/fire/firestore';
 
 @Component({
   selector: 'login',
@@ -8,12 +10,32 @@ import { Auth, GoogleAuthProvider, signInAnonymously, signInWithRedirect } from 
   templateUrl: './login.component.html',
   styleUrl: './login.component.scss'
 })
-export class LoginComponent {
-  auth: Auth = inject(Auth);
-  googleProvider: GoogleAuthProvider = new GoogleAuthProvider();
+export class LoginComponent implements OnInit {
+  private auth: Auth = inject(Auth);
+  private firestore: Firestore = inject(Firestore);
+  private googleProvider: GoogleAuthProvider = new GoogleAuthProvider();
+  private router = inject(Router);
+
+  ngOnInit() {
+    getRedirectResult(this.auth).then((result) => {
+      if (!result) { return; }
+      this.updateUserData(result!.user);
+      this.router.navigate([`study/${result.user.uid}`])
+    });
+  }
+
+  private updateUserData(result: User) {
+    const userRef = doc(this.firestore, `users/${result.uid}`);
+    const user = {
+      uid: result.uid!,
+      displayName: result.displayName!,
+      photoURL: result.photoURL!,
+    };
+    return setDoc(userRef, { user }, { merge: true });
+  }
 
   loginDemo() {
-    signInAnonymously(this.auth);
+    this.router.navigate([`study/demo`])
   }
 
   loginGoogle() {
