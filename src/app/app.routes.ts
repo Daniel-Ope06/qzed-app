@@ -1,4 +1,5 @@
 import { Routes } from '@angular/router';
+import { redirectUnauthorizedTo, AuthGuard } from '@angular/fire/auth-guard';
 
 export const routes: Routes = [
     {
@@ -14,6 +15,8 @@ export const routes: Routes = [
     {
         path: 'study/:uid',
         title: 'Study | QZed',
-        loadComponent: () => import('./domains/study/ui/study-page/study-page.component').then(c => c.StudyPageComponent)
+        loadComponent: () => import('./domains/study/ui/study-page/study-page.component').then(c => c.StudyPageComponent),
+        canActivate: [AuthGuard],
+        data: { authGuardPipe: () => redirectUnauthorizedTo(['login']) }
     }
 ];
