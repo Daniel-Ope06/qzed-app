@@ -1,1 +1,7 @@
-<p>header works!</p>
+<div class="header-bar">
+    <p class="text heading">Dashboard</p>
+    <div class="user-info">
+        <p class="text name">{{ user['displayName'] }}</p>
+        <img class="profile-img" [src]="user['photoURL']" alt="user photo">
+    </div>
+</div>
