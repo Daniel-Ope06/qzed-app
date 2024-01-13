@@ -1,5 +1,4 @@
 import { Routes } from '@angular/router';
-import { LoginPageComponent } from './domains/login/ui/login-page/login-page.component';
 
 export const routes: Routes = [
     {
@@ -10,6 +9,11 @@ export const routes: Routes = [
     {
         path: 'login',
         title: 'Login | QZed',
-        component: LoginPageComponent
+        loadComponent: () => import('./domains/login/ui/login-page/login-page.component').then(c => c.LoginPageComponent)
+    },
+    {
+        path: 'study/:uid',
+        title: 'Study | QZed',
+        loadComponent: () => import('./domains/study/ui/study-page/study-page.component').then(c => c.StudyPageComponent)
     }
 ];
