@@ -11,7 +11,7 @@ import { Firestore, doc, getDoc } from '@angular/fire/firestore';
 export class HeaderComponent implements OnInit {
   @Input({required: true}) uid: string = '';
   private firestore: Firestore = inject(Firestore);
-  user: { displayName: string, photoURL: string } = { displayName: '', photoURL: '' };
+  user: { displayName: string, email: string, photoURL: string } = { displayName: '', email: '', photoURL: '' };
 
   ngOnInit() {
     this.getUserDetails();
@@ -22,6 +22,7 @@ export class HeaderComponent implements OnInit {
     const userData = userDoc.data()?.['user'];
     if (userData) {
       this.user['displayName'] = userData['displayName'];
+      this.user['email'] = userData['email'];
       this.user['photoURL'] = userData['photoURL'];
     }
   }
