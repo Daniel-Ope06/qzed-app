@@ -1,0 +1,130 @@
+$blue: #002B59;
+$gray: #8B909A;
+$breakpoint: 768px;
+
+.container {
+    display: flex;
+    flex-direction: column;
+    padding: 0 0.85rem;
+    border: 2px solid black;
+    width: calc(fit-content + 2rem);
+    transition: all 0.2s ease-in-out;
+
+    &.collapse-container {
+        align-items: center;
+        width: fit-content;
+    }
+}
+
+.logo-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1.25rem 0;
+    width: 100%;
+    &.logo-collapse { justify-content: center; }
+}
+
+.logo {
+    height: 2.5rem;
+    object-fit: contain;
+}
+
+.hide { display: none; }
+
+.hamburger {
+    border: none;
+    height: 2rem;
+    width: 2.5rem;
+    padding: 0;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    background-color: transparent;
+    cursor: pointer;
+
+    .stroke {
+        height: 4px;
+        width: 100%;
+        border-radius: 2px;
+        background-color: $gray;
+        transition: background-color 0.2s ease-in-out;
+    }
+
+    &:hover {
+        .stroke { background-color: $blue; }
+    }
+
+    @media screen and (max-width: $breakpoint) {
+        &:hover {
+            .stroke { background-color: $gray; }
+        }
+    }
+}
+
+.menu-title {
+    font-size: 1rem;
+    font-weight: light;
+    color: $gray;
+    margin-top: 1.5rem;
+}
+
+.nav-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    width: 100%;
+}
+
+.collapse {
+    .nav-item {
+        p { display: none; }
+        gap: 0;
+    }
+}
+
+.nav-item {
+    border: none;
+    border-radius: 0.5rem;
+    padding: 0.5rem 1rem;
+    background-color: transparent;
+    transition: all 0.2s ease-in-out;
+
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    cursor: pointer;
+
+    p {
+        font-size: 1.75rem;
+        font-weight: 300;
+        color: $gray;
+        margin: 0;
+    }
+
+    svg path {
+        stroke: $gray;
+        &.has-fill { fill: $gray; }
+        &.stroke-only { stroke-width: 3px; }
+    }
+
+    &:hover {
+        p { color: $blue; }
+        svg path {
+            stroke: $blue;
+            &.has-fill { fill: $blue; }
+        }
+    }
+
+    &.selected {
+        background-color: $blue;
+        p { color: white; }
+        svg path {
+            stroke: white;
+            &.has-fill { fill: white; }
+        }
+    }
+}
+
