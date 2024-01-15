@@ -1,10 +1,11 @@
 import { Component, Input } from '@angular/core';
 import { HeaderComponent } from '../../feature/header/header.component';
+import { MenuComponent } from '../../feature/menu/menu.component';
 
 @Component({
   selector: 'study-page',
   standalone: true,
-  imports: [HeaderComponent],
+  imports: [HeaderComponent, MenuComponent],
   templateUrl: './study-page.component.html',
   styleUrl: './study-page.component.scss'
 })
