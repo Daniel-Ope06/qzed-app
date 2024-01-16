@@ -6,13 +6,30 @@ $breakpoint: 768px;
     display: flex;
     flex-direction: column;
     padding: 0 0.85rem;
-    border: 2px solid black;
+    height: 100svh;
     width: calc(fit-content + 2rem);
-    transition: all 0.2s ease-in-out;
+    transition: all 0.2s ease-out;
+    background-color: white;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.3);
 
     &.collapse-container {
         align-items: center;
         width: fit-content;
+    }
+
+    @media screen and (max-width: $breakpoint) {
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: auto;
+        overflow: hidden;
+        border-radius: 0 0 0.5rem 0;
+
+        &.collapse-container {
+            border: none;
+            height: 4rem;
+            box-shadow: none;
+        }
     }
 }
 
@@ -22,11 +39,21 @@ $breakpoint: 768px;
     justify-content: space-between;
     padding: 1.25rem 0;
     width: 100%;
-    &.logo-collapse { justify-content: center; }
+
+    &.logo-collapse {
+        gap: 1rem;
+        justify-content: center;
+        flex-direction: column-reverse;
+    }
 }
 
 .logo {
     height: 2.5rem;
+    object-fit: contain;
+}
+
+.logo-icon {
+    height: 4rem;
     object-fit: contain;
 }
 

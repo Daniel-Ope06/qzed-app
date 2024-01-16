@@ -1,6 +1,10 @@
 <div class="container" [class.collapse-container]="isCollapsed">
     <div class="logo-container" [class.logo-collapse]="isCollapsed">
-        <img class="logo" [class.hide]="isCollapsed" src="../../../../../assets/shared/qzed-logo.png" alt="logo"/>
+        @if (isCollapsed) {
+            <img class="logo-icon" [class.hide]="!isCollapsed" src="../../../../../assets/shared/qzed-icon.png" alt="logo"/>
+        } @else {
+            <img class="logo" [class.hide]="isCollapsed" src="../../../../../assets/shared/qzed-logo.png" alt="logo"/>
+        }
         <button class="hamburger" type="button" (click)="toggleCollapse()">
             <div class="stroke"></div>
             <div class="stroke"></div>

@@ -8,7 +8,7 @@ import { Component } from '@angular/core';
   styleUrl: './menu.component.scss'
 })
 export class MenuComponent {
-  isCollapsed = false;
+  isCollapsed = true;
 
   menuItems: { [key: string]: { route: string; selected: boolean } } = {
     dashboard: { route:'/dashboard', selected: false },
