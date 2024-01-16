@@ -10,6 +10,7 @@ import { Firestore, doc, getDoc } from '@angular/fire/firestore';
 })
 export class HeaderComponent implements OnInit {
   @Input({required: true}) uid: string = '';
+  @Input({required: true}) tabTitle: string = '';
   private firestore: Firestore = inject(Firestore);
   user: { displayName: string, email: string, photoURL: string } = { displayName: '', email: '', photoURL: '' };
 

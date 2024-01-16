@@ -1,6 +1,6 @@
 <div class="page-grid">
-    <app-menu/>
+    <app-menu (changeTabEvent)="receiveTab($event)"/>
     <div class="main-content">
-        <app-header [uid]="uid"/>
+        <app-header [uid]="uid" [tabTitle]="title"/>
     </div>
 </div>

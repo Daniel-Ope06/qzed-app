@@ -11,4 +11,9 @@ import { MenuComponent } from '../../feature/menu/menu.component';
 })
 export class StudyPageComponent {
   @Input() uid: string = '';
+  title: string = 'Question Bank';
+
+  receiveTab(tabTitle: string) {
+    this.title = tabTitle;
+  }
 }

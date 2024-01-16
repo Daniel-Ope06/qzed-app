@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, EventEmitter, Output } from '@angular/core';
 
 @Component({
   selector: 'app-menu',
@@ -8,14 +8,15 @@ import { Component } from '@angular/core';
   styleUrl: './menu.component.scss'
 })
 export class MenuComponent {
-  isCollapsed = true;
+  @Output() changeTabEvent = new EventEmitter<string>();
 
-  menuItems: { [key: string]: { route: string; selected: boolean } } = {
-    dashboard: { route:'/dashboard', selected: false },
-    question: { route: '/question-bank', selected: true },
-    download: { route: '/download', selected: false }
+  menuItems: { [key: string]: { route: string; selected: boolean; title: string } } = {
+    dashboard: { route:'/dashboard', selected: false, title: 'Dashboard' },
+    question: { route: '/question-bank', selected: true, title: 'Question Bank' },
+    download: { route: '/download', selected: false, title: 'Download' }
   };
 
+  isCollapsed: boolean = true;
   toggleCollapse() {
     this.isCollapsed = !this.isCollapsed;
   }
@@ -25,5 +26,6 @@ export class MenuComponent {
       this.menuItems[key].selected = false;
     }
     this.menuItems[route].selected = true;
+    this.changeTabEvent.emit(this.menuItems[route].title);
   }
 }
