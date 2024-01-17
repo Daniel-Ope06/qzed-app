@@ -1,6 +1,6 @@
 import { Component, OnInit, inject } from '@angular/core';
 import { Router } from '@angular/router';
-import { Auth, GoogleAuthProvider, User, getRedirectResult, signInAnonymously, signInWithRedirect } from '@angular/fire/auth';
+import { Auth, GoogleAuthProvider, User, getRedirectResult, signInWithRedirect } from '@angular/fire/auth';
 import { Firestore, doc, setDoc } from '@angular/fire/firestore';
 
 @Component({
@@ -29,8 +29,8 @@ export class LoginComponent implements OnInit {
     const user = {
       uid: result.uid!,
       email: result.email!,
-      photoURL: result.photoURL!,
-      displayName: result.displayName!,
+      photo_url: result.photoURL!,
+      display_name: result.displayName!,
     };
     return setDoc(userRef, { user }, { merge: true });
   }

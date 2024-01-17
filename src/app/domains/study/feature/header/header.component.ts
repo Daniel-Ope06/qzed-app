@@ -22,9 +22,9 @@ export class HeaderComponent implements OnInit {
     const userDoc = await getDoc(doc(this.firestore, `users/${this.uid}`));
     const userData = userDoc.data()?.['user'];
     if (userData) {
-      this.user['displayName'] = userData['displayName'];
+      this.user['displayName'] = userData['display_name'];
       this.user['email'] = userData['email'];
-      this.user['photoURL'] = userData['photoURL'];
+      this.user['photoURL'] = userData['photo_url'];
     }
   }
 }
