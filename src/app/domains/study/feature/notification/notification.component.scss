@@ -1,0 +1,21 @@
+.notification {
+    display: flex;
+    gap: 0.25rem;
+    flex-direction: column;
+    padding: 1rem 1.5rem;
+    border-bottom: 1px solid #DCDEE4;
+}
+
+.title {
+    font-size: 1rem;
+    font-weight: 700;
+    color: #292929;
+    margin: 0;
+}
+
+.content {
+    font-size: 0.75rem;
+    font-weight: 400;
+    color: #696F8C;
+    margin: 0;
+}
