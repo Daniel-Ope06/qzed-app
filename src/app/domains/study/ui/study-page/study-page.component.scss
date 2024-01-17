@@ -4,7 +4,6 @@ $breakpoint: 768px;
     display: grid;
     column-gap: 1rem;
     grid-template-columns: auto 1fr;
-    // border: 2px solid red;
 
     @media screen and (max-width: $breakpoint) {
         grid-template-columns: 100%;
@@ -12,6 +11,10 @@ $breakpoint: 768px;
 }
 
 .main-content {
+    display: grid;
+    grid-template-columns: 100%;
+    grid-template-rows: auto 1fr;
+    row-gap: 1rem;
     padding-right: 4rem;
     // border: 2px solid blue;
 

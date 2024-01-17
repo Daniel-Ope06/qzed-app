@@ -2,5 +2,8 @@
     <app-menu (changeTabEvent)="receiveTab($event)"/>
     <div class="main-content">
         <app-header [uid]="uid" [tabTitle]="title"/>
+        @switch (title) {
+            @case ('Dashboard') { <dashboard [uid]="uid"/> }
+        }
     </div>
 </div>
