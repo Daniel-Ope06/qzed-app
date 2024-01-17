@@ -7,7 +7,8 @@ $breakpoint: 768px;
     height: 100svh;
 
     @media screen and (max-width: $breakpoint) {
-        grid-template-columns: 100%;
+        display: flex;
+        flex-direction: column;
     }
 }
 
@@ -20,6 +21,7 @@ $breakpoint: 768px;
     // border: 2px solid blue;
 
     @media screen and (max-width: $breakpoint) {
-        padding-right: 0;
+        padding-right: 1rem;
+        padding-left: 1rem;
     }
 }
