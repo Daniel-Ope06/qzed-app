@@ -1,12 +1,13 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
+import { NotificationComponent } from '../notification/notification.component';
 
 @Component({
-  selector: 'app-dashboard',
+  selector: 'dashboard',
   standalone: true,
-  imports: [],
+  imports: [NotificationComponent],
   templateUrl: './dashboard.component.html',
   styleUrl: './dashboard.component.scss'
 })
 export class DashboardComponent {
-
+  @Input({required: true}) uid: string = '';
 }

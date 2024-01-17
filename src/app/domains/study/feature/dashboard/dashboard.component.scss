@@ -1,0 +1,45 @@
+$breakpoint: 768px;
+
+.page-flex {
+    display: flex;
+    gap: 1.5rem;
+    flex-direction: column;
+}
+
+.banner {
+    //width: max-content;
+    border-radius: 1.5rem;
+    border: 1px solid #DDDFE3;
+    padding: 2rem 1rem;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.text-col {
+    display: flex;
+    gap: 1rem;
+    flex-direction: column;
+
+    h1 {
+        font-size: 1.5rem;
+        font-weight: 600;
+        color: #1B1C1E;
+        margin: 0;
+    }
+
+    p {
+        font-size: 0.875rem;
+        font-weight: 400;
+        color: #676D7E;
+        margin: 0;
+    }
+}
+
+.image-col {
+
+    @media screen and (max-width: $breakpoint) {
+        display: none;
+    }
+}
