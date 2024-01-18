@@ -1,0 +1,52 @@
+$breakpoint-sm: 768px;
+
+.page-flex {
+    display: flex;
+    gap: 1.5rem;
+    flex-direction: column;
+}
+
+.banner {
+    border-radius: 1.5rem;
+    border: 1px solid #DDDFE3;
+    padding: 2rem 1rem;
+
+    display: flex;
+    justify-content: space-between;
+}
+
+.text-col {
+    display: flex;
+    gap: 2rem;
+    flex-direction: column;
+
+    h1 {
+        font-size: 2rem;
+        font-weight: 600;
+        color: #1B1C1E;
+        margin: 0;
+    }
+
+    p {
+        font-size: 1rem;
+        font-weight: 400;
+        color: #676D7E;
+        margin: 0;
+    }
+
+    @media screen and (max-width: $breakpoint-sm) {
+        h1 { font-size: 1.5rem; }
+        p { font-size: 0.875rem; }
+    }
+}
+
+.image-col {
+    height: 19rem;
+    object-fit: contain;
+    margin-bottom: -2rem;
+    margin-top: -2rem;
+
+    @media screen and (max-width: 1252px) {
+        display: none;
+    }
+}

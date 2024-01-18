@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 
 @Component({
-  selector: 'app-question-bank',
+  selector: 'question-bank',
   standalone: true,
   imports: [],
   templateUrl: './question-bank.component.html',
