@@ -1,0 +1,38 @@
+$border-color: #002B59;
+$fill-color: rgba(#002B59, 0.5);
+
+.container {
+    display: grid;
+    place-items: center;
+    padding-top: 3rem;
+}
+
+.sbl-rect-spin-fill {
+    color: $border-color;
+    height: 48px;
+    width: 48px;
+    position: relative;
+    border: 4px solid;
+    border-radius: 0.5rem;
+    display: inline-block;
+    animation: rect-rotate 1s  linear infinite;
+}
+
+.sbl-rect-spin-fill::after {
+    content: '';
+    height: 0;
+    width: inherit;
+    display: block;
+    background: $fill-color;
+    animation: fill-rect 1s linear infinite;
+}
+
+@keyframes rect-rotate {
+    0% { transform: rotate(0); }
+    50%, 100% { transform: rotate(180deg); }
+}
+
+@keyframes fill-rect {
+    0%, 50% { height: 0; }
+    100% { height: inherit; }
+}
