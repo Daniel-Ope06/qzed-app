@@ -12,38 +12,36 @@ export class MenuComponent {
   @Output() changeTabEvent = new EventEmitter<string>();
   private router: Router = inject(Router);
 
-  menuItems: { [key: string]: { route: string; selected: boolean; title: string } } = {
-    dashboard: { route:'/dashboard', selected: false, title: 'Dashboard' },
-    question: { route: '/question-bank', selected: false, title: 'Question Bank' },
-    download: { route: '/download', selected: false, title: 'Download' }
+  menuItems: { [key: string]: { route: string; isSelected: boolean; title: string } } = {
+    'dashboard': { route:'/dashboard', isSelected: false, title: 'Dashboard' },
+    'question-bank': { route: '/question-bank', isSelected: false, title: 'Question Bank' },
+    'download': { route: '/download', isSelected: false, title: 'Download' }
   };
 
   isCollapsed: boolean = true;
   currentRoute = this.router.url.substring(1);
 
   ngOnInit() {
+    // set initial route on page load
     const lastSegment: string = this.currentRoute.split('/').pop()!;
-    this.setSelected(lastSegment);
+    this.menuItems[lastSegment].isSelected = true;
   }
-
 
   toggleCollapse() {
     this.isCollapsed = !this.isCollapsed;
   }
 
-  setSelected(subRoute: string) {
-    this.menuItems[subRoute].selected = true;
-  }
-
-  switchRoute(subRoute: string) {
+  switchRoute(selected: string) {
+    // update menu item selection
     for (let key in this.menuItems) {
-      this.menuItems[key].selected = false;
+      this.menuItems[key].isSelected = false;
     }
-    this.menuItems[subRoute].selected = true;
-    this.changeTabEvent.emit(this.menuItems[subRoute].title);
+    this.menuItems[selected].isSelected = true;
+    this.changeTabEvent.emit(this.menuItems[selected].title);
 
+    // update route
     let segments = this.currentRoute.split('/');
-    segments[segments.length - 1] = this.menuItems[subRoute].route;
+    segments[segments.length - 1] = this.menuItems[selected].route;
     let newRoute = segments.join('/');
     this.router.navigate([newRoute]);
   }
