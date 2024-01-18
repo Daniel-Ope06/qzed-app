@@ -23,6 +23,7 @@ $horizontal-page-padding: 0.75rem;
     background-image: url(../../../../../assets/login/thinking-lady.png);
     background-size: cover;
     background-position: center;
+    position: relative;
 
     @media screen and (max-width: $breakpoint) {
         height: 100%;
@@ -47,19 +48,26 @@ $horizontal-page-padding: 0.75rem;
 .logo-box {
     display: grid;
     place-items: center;
+
     border-radius: 0.7rem;
     padding: 0.6rem 0.8rem;
     height: calc(4rem - 1.2rem);
     width: calc(10rem - 1.6rem);
     background-color: #FFF;
-    margin-top: 1.5rem;
-    margin-left: 1.5rem;
-    position: relative;
+
+    position: absolute;
+    top: 1.5rem;
+    left: 1.5rem;
     z-index: 100;
 
     img {
         width: 100%;
         object-fit: contain;
+    }
+
+    @media screen and (max-width: $breakpoint) {
+        top: 1rem;
+        left: 1rem;
     }
 }
 
@@ -69,11 +77,10 @@ $horizontal-page-padding: 0.75rem;
     align-items: left;
     gap: 1rem;
     color: #002B59;
-    width: calc($login-col-width - 1.5rem);
 
     position: absolute;
-    bottom: calc($vertical-page-padding + 1.5rem);
-    left: calc($horizontal-page-padding + 1.5rem);
+    bottom: 1.5rem;
+    left: 1.5rem;
     z-index: 100;
 
     h1 {
@@ -89,8 +96,12 @@ $horizontal-page-padding: 0.75rem;
     }
 
     @media screen and (max-width: $breakpoint) {
-        width: calc(100% - 3rem);
-        bottom: calc(50% + 1rem);
+        width: 100%;
+        bottom: 1rem;
+        left: 0;
+        gap: 0;
+        align-items: center;
+
         h1 { font-size: 1.5rem; }
         p { font-size: 1rem; }
     }
