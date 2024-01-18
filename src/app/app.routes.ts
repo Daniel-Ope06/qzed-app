@@ -17,6 +17,10 @@ export const routes: Routes = [
         title: 'Study | QZed',
         loadComponent: () => import('./domains/study/ui/study-page/study-page.component').then(c => c.StudyPageComponent),
         canActivate: [AuthGuard],
-        data: { authGuardPipe: () => redirectUnauthorizedTo(['login']) }
+        data: { authGuardPipe: () => redirectUnauthorizedTo(['login']) },
+        children: [
+            { path: '', redirectTo: 'dashboard', pathMatch: 'full' },
+            { path: 'dashboard', title: 'Dashboard | QZed', loadComponent: () => import('./domains/study/feature/dashboard/dashboard.component').then(c => c.DashboardComponent) },
+        ]
     }
 ];
