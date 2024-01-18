@@ -1,12 +1,13 @@
 import { Component, OnInit, inject } from '@angular/core';
 import { Router } from '@angular/router';
-import { Auth, GoogleAuthProvider, User, getRedirectResult, signInWithRedirect } from '@angular/fire/auth';
+import { Auth, GoogleAuthProvider, User, onAuthStateChanged, signInWithRedirect } from '@angular/fire/auth';
 import { Firestore, doc, setDoc } from '@angular/fire/firestore';
+import { LoadingSpinnerComponent } from '../../../shared/ui/loading-spinner/loading-spinner.component';
 
 @Component({
   selector: 'login',
   standalone: true,
-  imports: [],
+  imports: [LoadingSpinnerComponent],
   templateUrl: './login.component.html',
   styleUrl: './login.component.scss'
 })
@@ -15,12 +16,17 @@ export class LoginComponent implements OnInit {
   private firestore: Firestore = inject(Firestore);
   private googleProvider: GoogleAuthProvider = new GoogleAuthProvider();
   private router = inject(Router);
+ isLoading: boolean = false;
 
   ngOnInit() {
-    getRedirectResult(this.auth).then((result) => {
-      if (!result) { return; }
-      this.updateUserData(result!.user);
-      this.router.navigate([`study/${result.user.uid}`])
+    this.isLoading = true;
+    onAuthStateChanged(this.auth, (user) => {
+      if (!user) {
+        this.isLoading = false;
+        return;
+      }
+      this.updateUserData(user);
+      this.router.navigate([`study/${user.uid}`]);
     });
   }
 
