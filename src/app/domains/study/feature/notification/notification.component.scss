@@ -1,9 +1,15 @@
+$breakpoint-sm: 768px;
+
 .notification {
     display: flex;
     gap: 0.25rem;
     flex-direction: column;
     padding: 1rem 1.5rem;
     border-bottom: 1px solid #DCDEE4;
+
+    @media screen and (max-width: $breakpoint-sm) {
+        padding: 1rem;
+    }
 }
 
 .title {
@@ -11,11 +17,14 @@
     font-weight: 700;
     color: #292929;
     margin: 0;
+    margin-bottom: 0.25rem;
 }
 
-.content {
-    font-size: 0.75rem;
+.content, .date {
+    font-size: 0.875rem;
     font-weight: 400;
     color: #696F8C;
     margin: 0;
 }
+
+.date { font-style: italic; }

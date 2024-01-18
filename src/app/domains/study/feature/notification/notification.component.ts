@@ -1,15 +1,14 @@
+import { CommonModule } from '@angular/common';
 import { Component, Input } from '@angular/core';
+import { Notification } from '../../data-access/notification.model';
 
 @Component({
   selector: 'notification',
   standalone: true,
-  imports: [],
+  imports: [CommonModule],
   templateUrl: './notification.component.html',
-  styleUrl: './notification.component.scss'
+  styleUrl: './notification.component.scss',
 })
 export class NotificationComponent {
-  @Input({required: true}) title: string = '';
-  @Input({required: true}) content: string = '';
-  @Input({required: true}) date: string = '';
-  @Input({required: true}) uid: string = '';
+  @Input({required: true}) notification!: Notification;
 }

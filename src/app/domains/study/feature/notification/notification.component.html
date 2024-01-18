@@ -1,5 +1,7 @@
-<div class="notification">
-    <h1 class="title">{{ title }}</h1>
-    <p class="content">{{ content }}</p>
-    
-</div>
+@if (notification) {
+    <div class="notification">
+        <h1 class="title">{{ notification.title }}</h1>
+        <p class="content">{{ notification.content }}</p>
+        <p class="date">{{ notification.date.toDate() | date: 'MMM dd yyyy' }}</p>
+    </div>
+}
