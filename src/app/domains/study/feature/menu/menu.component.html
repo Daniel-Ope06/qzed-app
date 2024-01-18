@@ -15,7 +15,7 @@
     <p class="menu-title" [class.hide]="isCollapsed">MAIN MENU</p>
 
     <div class="nav-list" [class.collapse]="isCollapsed">
-        <button class="nav-item" type="button" [class.selected]="menuItems['dashboard'].isSelected" (click)="switchRoute('dashboard')">
+        <button class="nav-item" type="button" title="Dashboard" [class.selected]="menuItems['dashboard'].isSelected" (click)="switchRoute('dashboard')">
             <svg xmlns="http://www.w3.org/2000/svg" width="32" height="33" viewBox="0 0 32 33" fill="none">
                 <path class="stroke-only" d="M25.3333 12.0323L18.2226 6.50159C16.9389 5.50289 15.141 5.50289 13.8573 6.50159L6.74529 12.0323C5.87916 12.7058 5.37277 13.7417 5.37329 14.8389V24.4389C5.37329 25.9117 6.5672 27.1056 8.03996 27.1056H24.04C25.5127 27.1056 26.7066 25.9117 26.7066 24.4389V14.8389C26.7066 13.7416 26.2 12.7056 25.3333 12.0323" stroke="#8B909A" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"/>
                 <path class="stroke-only" d="M21.3334 20.4187C18.3867 22.1961 13.6107 22.1961 10.6667 20.4187" stroke="#8B909A" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"/>
@@ -23,21 +23,21 @@
             <p>Dashboard</p>
         </button>
 
-        <button class="nav-item" type="button" [class.selected]="menuItems['question-bank'].isSelected" (click)="switchRoute('question-bank')">
+        <button class="nav-item" type="button" title="Question Bank" [class.selected]="menuItems['question-bank'].isSelected" (click)="switchRoute('question-bank')">
             <svg xmlns="http://www.w3.org/2000/svg" width="27" height="26" viewBox="0 0 27 26" fill="none">
                 <path class="has-fill" d="M13.3601 0.0963135C20.4295 0.0963135 26.1601 5.82815 26.1601 12.8962C26.1601 19.9644 20.4295 25.6963 13.3601 25.6963C6.29062 25.6963 0.560059 19.9644 0.560059 12.8962C0.560059 5.82815 6.29062 0.0963135 13.3601 0.0963135ZM13.3601 2.23007C7.47846 2.23007 2.69382 7.01471 2.69382 12.8962C2.69382 18.7778 7.47846 23.5625 13.3601 23.5625C19.2417 23.5625 24.0263 18.7778 24.0263 12.8962C24.0263 7.01471 19.2417 2.23007 13.3601 2.23007ZM13.3601 17.3763C14.067 17.3763 14.6401 17.9493 14.6401 18.6563C14.6401 19.3632 14.067 19.9363 13.3601 19.9363C12.6531 19.9363 12.0801 19.3632 12.0801 18.6563C12.0801 17.9493 12.6531 17.3763 13.3601 17.3763ZM13.3601 6.17631C15.3041 6.17631 16.8801 7.75228 16.8801 9.69631C16.8801 10.9901 16.4993 11.711 15.5347 12.7153L15.3188 12.935C14.5228 13.7311 14.3201 14.0691 14.3201 14.8162C14.3201 15.3464 13.8902 15.7762 13.3601 15.7762C12.8299 15.7762 12.4001 15.3464 12.4001 14.8162C12.4001 13.5224 12.7809 12.8015 13.7455 11.7972L13.9613 11.5775C14.7573 10.7814 14.9601 10.4434 14.9601 9.69631C14.9601 8.81265 14.2438 8.09631 13.3601 8.09631C12.5316 8.09631 11.8503 8.72591 11.7684 9.53272L11.7601 9.69631C11.7601 10.2266 11.3302 10.6562 10.8001 10.6562C10.2699 10.6562 9.84006 10.2266 9.84006 9.69631C9.84006 7.75228 11.416 6.17631 13.3601 6.17631Z" fill="white"/>
             </svg>
             <p>Question Bank</p>
         </button>
 
-        <button class="nav-item" type="button" [class.selected]="menuItems['download'].isSelected" (click)="switchRoute('download')">
+        <button class="nav-item" type="button" title="Download" [class.selected]="menuItems['download'].isSelected" (click)="switchRoute('download')">
             <svg xmlns="http://www.w3.org/2000/svg" width="32" height="33" viewBox="0 0 32 33" fill="none">
                 <path class="has-fill" d="M24.3331 27.7979C24.8853 27.7977 25.3333 28.2453 25.3333 28.7976C25.3333 29.3499 24.8859 29.7977 24.3336 29.7979L7.00029 29.8029C6.448 29.8031 6 29.3555 6 28.8032C6 28.2509 6.44743 27.8031 6.99971 27.8029L24.3331 27.7979ZM15.5309 3.14695L15.6667 3.13782C16.1729 3.13782 16.5913 3.51402 16.6576 4.00212L16.6667 4.13782L16.6653 22.3845L21.6277 17.424C21.9828 17.0691 22.5384 17.0368 22.9299 17.3273L23.042 17.4241C23.3969 17.7792 23.4292 18.3348 23.1387 18.7263L23.0419 18.8384L16.3783 25.5005C16.0235 25.8553 15.4683 25.8877 15.0768 25.5976L14.9647 25.5009L8.29337 18.8388C7.90259 18.4485 7.90215 17.8153 8.29241 17.4245C8.64719 17.0693 9.20272 17.0367 9.5944 17.3269L9.70663 17.4236L14.6653 22.3752L14.6667 4.13782C14.6667 3.63155 15.0429 3.21316 15.5309 3.14695Z" fill="#8B909A"/>
             </svg>
             <p>Download</p>
         </button>
 
-        <button class="nav-item" type="button" (click)="logOut()">
+        <button class="nav-item" type="button" title="Logout" (click)="logOut()">
             <svg xmlns="http://www.w3.org/2000/svg" width="32" height="33" viewBox="0 0 32 33" fill="none">
                 <path class="stroke-only" d="M20 4.46387H25.3333C26.0406 4.46387 26.7189 4.74482 27.219 5.24492C27.719 5.74501 28 6.42329 28 7.13053V25.7972C28 26.5044 27.719 27.1827 27.219 27.6828C26.7189 28.1829 26.0406 28.4639 25.3333 28.4639H20" stroke="#8B909A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                 <path class="stroke-only" d="M13.3333 23.1306L19.9999 16.4639L13.3333 9.79724" stroke="#8B909A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
