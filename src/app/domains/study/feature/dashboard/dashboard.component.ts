@@ -1,5 +1,7 @@
-import { Component, Input } from '@angular/core';
+import { Component, OnInit, inject } from '@angular/core';
 import { NotificationComponent } from '../notification/notification.component';
+import { NotificationService } from '../../data-access/notification.service';
+import { Notification } from '../../data-access/notification.model';
 
 @Component({
   selector: 'dashboard',
@@ -8,6 +10,13 @@ import { NotificationComponent } from '../notification/notification.component';
   templateUrl: './dashboard.component.html',
   styleUrl: './dashboard.component.scss'
 })
-export class DashboardComponent {
-  @Input({required: true}) uid: string = '';
+export class DashboardComponent implements OnInit {
+  private notificationService: NotificationService = inject(NotificationService);
+  notifications!: Notification[];
+
+  ngOnInit() {
+    this.notificationService.getAll().then((notifications) => {
+      this.notifications = notifications.reverse();
+    });
+  }
 }

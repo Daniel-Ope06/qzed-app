@@ -36,8 +36,17 @@
 
     <div class="notification-container">
         <div class="section-header">
-            <h1>Notifications</h1>
-            <div class="notification-number">2</div>
+            <h1>Notification</h1>
         </div>
+
+        @if (notifications) {
+            @for (notification of notifications; track notification.date) {
+                <notification [notification]="notification"/>
+            } @empty {
+                <div class="empty-notifications">No Notification</div>
+            }
+        } @else {
+            <p>Loading</p>
+        }
     </div>
 </div>
