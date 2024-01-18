@@ -25,10 +25,10 @@ $breakpoint-lg: 1440px;
 }
 
 .main-content {
-    display: grid;
-    grid-template-columns: 100%;
-    grid-template-rows: auto 1fr;
-    row-gap: 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+
     padding-right: 4rem;
     padding-bottom: 2rem;
     overflow-y: auto;
