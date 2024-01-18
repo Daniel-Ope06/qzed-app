@@ -1,4 +1,5 @@
 import { Component, EventEmitter, Output, inject } from '@angular/core';
+import { Auth, signOut } from '@angular/fire/auth';
 import { Router } from '@angular/router';
 
 @Component({
@@ -44,5 +45,11 @@ export class MenuComponent {
     segments[segments.length - 1] = this.menuItems[selected].route;
     let newRoute = segments.join('/');
     this.router.navigate([newRoute]);
+  }
+
+  private auth: Auth = inject(Auth);
+  logOut() {
+    signOut(this.auth);
+    this.router.navigate(['/login']);
   }
 }
