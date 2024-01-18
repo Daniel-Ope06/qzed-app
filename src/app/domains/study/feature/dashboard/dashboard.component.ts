@@ -2,11 +2,12 @@ import { Component, OnInit, inject } from '@angular/core';
 import { NotificationComponent } from '../notification/notification.component';
 import { NotificationService } from '../../data-access/notification.service';
 import { Notification } from '../../data-access/notification.model';
+import { LoadingSpinnerComponent } from '../../../shared/ui/loading-spinner/loading-spinner.component';
 
 @Component({
   selector: 'dashboard',
   standalone: true,
-  imports: [NotificationComponent],
+  imports: [NotificationComponent, LoadingSpinnerComponent],
   templateUrl: './dashboard.component.html',
   styleUrl: './dashboard.component.scss'
 })
