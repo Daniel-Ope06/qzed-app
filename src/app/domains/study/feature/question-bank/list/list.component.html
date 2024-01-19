@@ -1,1 +1,7 @@
-<p>list works!</p>
+<div [ngClass]="isGrid ? 'grid-list' : 'flex-list'">
+    @for (item of items; track item) {
+        <button [ngClass]="isGrid ? 'grid-item' : 'flex-item'" type="button">{{ item }}</button>
+    } @empty {
+        <div class="empty-list">No items found</div>
+    }
+</div>
