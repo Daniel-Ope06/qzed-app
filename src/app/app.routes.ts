@@ -21,7 +21,15 @@ export const routes: Routes = [
         children: [
             { path: '', redirectTo: 'dashboard', pathMatch: 'full' },
             { path: 'dashboard', title: 'Dashboard | QZed', loadComponent: () => import('./domains/study/feature/dashboard/dashboard.component').then(c => c.DashboardComponent) },
-            { path: 'question-bank', title: 'Question Bank | QZed', loadComponent: () => import('./domains/study/feature/question-bank/question-bank.component').then(c => c.QuestionBankComponent) },
+            {
+                path: 'question-bank',
+                title: 'Question Bank | QZed',
+                loadComponent: () => import('./domains/study/feature/question-bank/question-bank.component').then(c => c.QuestionBankComponent),
+                children: [
+                    { path: '', redirectTo: 'schools', pathMatch: 'full' },
+                    { path: 'schools', title: 'Schools | QZed', loadComponent: () => import('./domains/study/feature/question-bank/school-list/school-list.component').then(c => c.SchoolListComponent) },
+                ]
+            },
         ]
     }
 ];
