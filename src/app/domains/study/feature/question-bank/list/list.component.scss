@@ -2,6 +2,12 @@ $breakpoint-sm: 768px;
 $border-color: #FF7F00;// #002B59; // #FF7F00;
 $background-color: #ECEAEA;
 
+.no-items {
+    padding: 3rem 0;
+    border-radius: 1rem;
+    border: 2px solid $background-color;
+}
+
 .grid-list {
     display: grid;
     grid-template-columns: repeat(5, 14.286%);
@@ -58,18 +64,4 @@ $background-color: #ECEAEA;
     &:nth-child(even) {
         background-color: lighten($background-color, 5%);
     }
-}
-
-.empty-list {
-    display: grid;
-    place-items: center;
-
-    padding: 3rem 0;
-    border-radius: 0.5rem;
-    border: 1px solid $border-color;
-    background-color: lighten($background-color, 5%);
-
-    font-size: 1.25rem;
-    font-weight: 400;
-    color: #1B1C1E;
 }

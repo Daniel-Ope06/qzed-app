@@ -1,7 +1,7 @@
-<div [ngClass]="isGrid ? 'grid-list' : 'flex-list'">
-    @for (item of items; track item) {
-        <button [ngClass]="isGrid ? 'grid-item' : 'flex-item'" type="button">{{ item }}</button>
+<div [ngClass]="isGrid && items.length!=0 ? 'grid-list' : 'flex-list'">
+    @for (item of items; track item.id) {
+        <button [ngClass]="isGrid ? 'grid-item' : 'flex-item'" type="button" (click)="returnId(item.id)">{{ isGrid ? item.short : item.long }}</button>
     } @empty {
-        <div class="empty-list">No items found</div>
+        <loading-spinner class="no-items"/>
     }
 </div>
