@@ -1,12 +1,28 @@
-import { Component } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output, inject } from '@angular/core';
+import { ListComponent } from '../list/list.component';
+import { QuestionService } from '../../../data-access/question.service';
 
 @Component({
   selector: 'app-school-list',
   standalone: true,
-  imports: [],
+  imports: [ListComponent],
   templateUrl: './school-list.component.html',
   styleUrl: './school-list.component.scss'
 })
-export class SchoolListComponent {
+export class SchoolListComponent implements OnInit {
+  @Output() selectSchoolEvent = new EventEmitter<string>();
+  private questionService = inject(QuestionService);
+  items: {long:string, short:string, id:string}[] = [];
 
+  async ngOnInit() {
+    await this.questionService.getSchools().then((schools) => {
+      for (let school of schools) {
+        this.items.push({long: school['full_name'], short: school['short_name'], id: school['id']});
+      }
+    });
+  }
+
+  returnSchoolId(id: string) {
+    this.selectSchoolEvent.emit(id);
+  }
 }
