@@ -28,6 +28,7 @@ export const routes: Routes = [
                 children: [
                     { path: '', redirectTo: 'schools', pathMatch: 'full' },
                     { path: 'schools', title: 'Schools | QZed', loadComponent: () => import('./domains/study/feature/question-bank/school-list/school-list.component').then(c => c.SchoolListComponent) },
+                    { path: 'schools/:schoolId', title: 'Courses | QZed', loadComponent: () => import('./domains/study/feature/question-bank/course-list/course-list.component').then(c => c.CourseListComponent) },
                 ]
             },
         ]
