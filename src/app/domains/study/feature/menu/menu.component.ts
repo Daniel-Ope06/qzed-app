@@ -1,6 +1,6 @@
 import { Component, EventEmitter, Output, inject } from '@angular/core';
 import { Auth, signOut } from '@angular/fire/auth';
-import { Router } from '@angular/router';
+import { NavigationEnd, Router } from '@angular/router';
 
 @Component({
   selector: 'app-menu',
@@ -24,7 +24,30 @@ export class MenuComponent {
   currentRoute = this.router.url.substring(1);
   uid: string = '';
 
-  ngOnInit() {
+  constructor() {
+    this.router.events.subscribe((event) => {
+      if (event instanceof NavigationEnd) {
+        // do something with event.url
+        this.currentRoute = this.router.url.substring(1);
+        console.log(this.currentRoute);
+        this.initializeRoute();
+      }
+    });
+  }
+
+  toggleCollapse() {
+    this.isCollapsed = !this.isCollapsed;
+  }
+
+  logOut() {
+    signOut(this.auth);
+    this.router.navigate(['/login']);
+  }
+
+  initializeRoute() {
+    for (let key in this.menuItems) {
+      this.menuItems[key].isSelected = false;
+    }
     const segments = this.currentRoute.split('/');
     this.uid = segments[1];
     segments.forEach((segment) => {
@@ -32,10 +55,6 @@ export class MenuComponent {
         this.menuItems[segment].isSelected = true;
       }
     });
-  }
-
-  toggleCollapse() {
-    this.isCollapsed = !this.isCollapsed;
   }
 
   switchRoute(selected: string) {
@@ -48,10 +67,5 @@ export class MenuComponent {
 
     // update route
     this.router.navigate([`study/${this.uid}/${selected}`]);
-  }
-
-  logOut() {
-    signOut(this.auth);
-    this.router.navigate(['/login']);
   }
 }
