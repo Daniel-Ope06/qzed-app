@@ -12,6 +12,7 @@ import { Router } from '@angular/router';
 export class MenuComponent {
   @Output() changeTabEvent = new EventEmitter<string>();
   private router: Router = inject(Router);
+  private auth: Auth = inject(Auth);
 
   menuItems: { [key: string]: { route: string; isSelected: boolean; title: string } } = {
     'dashboard': { route:'/dashboard', isSelected: false, title: 'Dashboard' },
@@ -21,11 +22,16 @@ export class MenuComponent {
 
   isCollapsed: boolean = true;
   currentRoute = this.router.url.substring(1);
+  uid: string = '';
 
   ngOnInit() {
-    // set initial route on page load
-    const lastSegment: string = this.currentRoute.split('/').pop()!;
-    this.menuItems[lastSegment].isSelected = true;
+    const segments = this.currentRoute.split('/');
+    this.uid = segments[1];
+    segments.forEach((segment) => {
+      if (this.menuItems[segment]) {
+        this.menuItems[segment].isSelected = true;
+      }
+    });
   }
 
   toggleCollapse() {
@@ -41,13 +47,9 @@ export class MenuComponent {
     this.changeTabEvent.emit(this.menuItems[selected].title);
 
     // update route
-    let segments = this.currentRoute.split('/');
-    segments[segments.length - 1] = this.menuItems[selected].route;
-    let newRoute = segments.join('/');
-    this.router.navigate([newRoute]);
+    this.router.navigate([`study/${this.uid}/${selected}`]);
   }
 
-  private auth: Auth = inject(Auth);
   logOut() {
     signOut(this.auth);
     this.router.navigate(['/login']);
