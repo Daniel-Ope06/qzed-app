@@ -29,6 +29,7 @@ export const routes: Routes = [
                     { path: '', redirectTo: 'schools', pathMatch: 'full' },
                     { path: 'schools', title: 'Schools | QZed', loadComponent: () => import('./domains/study/feature/question-bank/school-list/school-list.component').then(c => c.SchoolListComponent) },
                     { path: 'schools/:schoolId', title: 'Courses | QZed', loadComponent: () => import('./domains/study/feature/question-bank/course-list/course-list.component').then(c => c.CourseListComponent) },
+                    { path: 'courses/:courseId', title: 'Years | QZed', loadComponent: () => import('./domains/study/feature/question-bank/year-list/year-list.component').then(c => c.YearListComponent) },
                 ]
             },
         ]
