@@ -12,9 +12,11 @@ $background-color: #ECEAEA;
     display: flex;
     align-items: center;
     justify-content: space-between;
-
-    padding: 0 1rem;
     padding-left: 1.5rem;
+
+    @media screen and (max-width: $breakpoint-sm) {
+        padding-left: 0;
+    }
 
     h1 {
         font-size: 1.5rem;
@@ -120,6 +122,10 @@ $background-color: #ECEAEA;
 
     &:nth-child(even) {
         background-color: lighten($background-color, 5%);
+    }
+
+    &:last-child {
+        border-bottom: 1px solid $border-color;
     }
 
     @media screen and (max-width: $breakpoint-sm) {
