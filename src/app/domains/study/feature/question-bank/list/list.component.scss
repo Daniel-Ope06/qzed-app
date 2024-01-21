@@ -2,6 +2,62 @@ $breakpoint-sm: 768px;
 $border-color: #FF7F00;// #002B59; // #FF7F00;
 $background-color: #ECEAEA;
 
+.container {
+    display:  flex;
+    gap: 2rem;
+    flex-direction: column;
+}
+
+.header-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    padding: 0 1rem;
+    padding-left: 1.5rem;
+
+    h1 {
+        font-size: 1.5rem;
+        font-weight: 600;
+        color: #1B1C1E;
+        margin: 0;
+    }
+
+    button {
+        height: 3.25rem;
+        width: 3.25rem;
+
+        padding: 0;
+        border-radius: 50%;
+        border: 3px solid #8B909A;
+        background-color: transparent;
+
+        display: grid;
+        place-items: center;
+
+        cursor: pointer;
+        transition: 0.2s all ease-in-out;
+        svg path {
+            fill: #8B909A;
+            transition: 0.2s all ease-in-out;
+        }
+        .row-svg div { transition: 0.2s all ease-in-out; }
+
+        &:hover {
+            border-color: #002B59;
+            svg path { fill: #002B59 }
+            .row-svg div { border-color: #002B59; }
+        }
+
+        @media screen and (max-width: $breakpoint-sm) {
+            &:hover {
+                border-color: #8B909A;
+                svg path { fill: #8B909A }
+            }
+        }
+    }
+}
+
 .no-items {
     padding: 3rem 0;
     border-radius: 1rem;
@@ -29,6 +85,7 @@ $background-color: #ECEAEA;
     color: #1B1C1E;
     font-size: 1.5rem;
     font-weight: 400;
+    text-align: left;
 
     cursor: pointer;
     background-color: $background-color;
@@ -63,5 +120,28 @@ $background-color: #ECEAEA;
 
     &:nth-child(even) {
         background-color: lighten($background-color, 5%);
+    }
+
+    @media screen and (max-width: $breakpoint-sm) {
+        font-size: 1.25rem;
+    } 
+}
+
+.row-svg {
+    display:  flex;
+    flex-direction: column;
+    gap: 0;
+    width: 70%;
+
+    div {
+        height: 0.5rem;
+        border: 3px solid #8B909A;
+
+        &:nth-child(1) { border-radius: 0.25rem 0.25rem 0 0; }
+
+        &:nth-child(2) {
+            border-top: none;
+            border-radius: 0 0 0.25rem 0.25rem;
+        }
     }
 }
