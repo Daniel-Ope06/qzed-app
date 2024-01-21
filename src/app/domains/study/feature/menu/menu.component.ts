@@ -29,7 +29,6 @@ export class MenuComponent {
       if (event instanceof NavigationEnd) {
         // do something with event.url
         this.currentRoute = this.router.url.substring(1);
-        console.log(this.currentRoute);
         this.initializeRoute();
       }
     });
