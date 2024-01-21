@@ -24,38 +24,61 @@ $background-color: #ECEAEA;
         color: #1B1C1E;
         margin: 0;
     }
+}
 
-    button {
-        height: 3.25rem;
-        width: 3.25rem;
+.btn-row {
+    display: flex;
+    gap: 1.5rem;
+    align-items: center;
+}
 
-        padding: 0;
-        border-radius: 50%;
-        border: 3px solid #8B909A;
-        background-color: transparent;
+.back-btn, .grid-btn {
+    height: 3.25rem;
+    width: 3.25rem;
+    padding: 0;
+    background-color: transparent;
 
-        display: grid;
-        place-items: center;
+    display: grid;
+    place-items: center;
 
-        cursor: pointer;
+    cursor: pointer;
+    transition: 0.2s all ease-in-out;
+    svg path {
+        fill: #8B909A;
         transition: 0.2s all ease-in-out;
-        svg path {
-            fill: #8B909A;
-            transition: 0.2s all ease-in-out;
-        }
-        .row-svg div { transition: 0.2s all ease-in-out; }
+    }
+}
 
+.back-btn {
+    border: none;
+
+    &:hover {
+        svg path { fill: #002B59 }
+    }
+
+    @media screen and (max-width: $breakpoint-sm) {
         &:hover {
-            border-color: #002B59;
-            svg path { fill: #002B59 }
-            .row-svg div { border-color: #002B59; }
+            svg path { fill: #8B909A }
         }
+    }
+}
 
-        @media screen and (max-width: $breakpoint-sm) {
-            &:hover {
-                border-color: #8B909A;
-                svg path { fill: #8B909A }
-            }
+.grid-btn {
+    border-radius: 50%;
+    border: 3px solid #8B909A;
+
+    .row-svg div { transition: 0.2s all ease-in-out; }
+
+    &:hover {
+        border-color: #002B59;
+        svg path { fill: #002B59 }
+        .row-svg div { border-color: #002B59; }
+    }
+
+    @media screen and (max-width: $breakpoint-sm) {
+        &:hover {
+            border-color: #8B909A;
+            svg path { fill: #8B909A }
         }
     }
 }
