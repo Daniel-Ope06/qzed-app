@@ -18,13 +18,13 @@ export class QuestionBankComponent {
   subscribeToEmitter(componentRef: Component) {
     if (componentRef instanceof SchoolListComponent) {
       const schoolList = componentRef as SchoolListComponent;
-      schoolList.selectSchoolEvent.subscribe((id) => {
-        this.routeToCourseList(id);
+      schoolList.selectSchoolEvent.subscribe((schoolId) => {
+        this.routeToCourseList(schoolId);
       });
     } else if (componentRef instanceof CourseListComponent) {
       const courseList = componentRef as CourseListComponent;
-      this.subscription = courseList.selectCourseEvent.subscribe((id) => {
-        this.routeToYearList(id);
+      this.subscription = courseList.selectCourseEvent.subscribe((courseId) => {
+        this.routeToYearList(courseId);
       });
     }
   }
@@ -46,6 +46,7 @@ export class QuestionBankComponent {
     const currentRoute = this.router.url.substring(1);
     const segments = currentRoute.split('/');
     const uid = segments[1];
-    this.router.navigate([`study/${uid}/question-bank/courses/${courseId}`]);
+    const schoolId = segments[4];
+    this.router.navigate([`study/${uid}/question-bank/schools/${schoolId}/courses/${courseId}`]);
   }
 }
