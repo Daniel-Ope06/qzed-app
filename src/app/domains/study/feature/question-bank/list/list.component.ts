@@ -1,6 +1,7 @@
-import { CommonModule, Location } from '@angular/common';
+import { CommonModule } from '@angular/common';
 import { Component, EventEmitter, Input, Output, inject } from '@angular/core';
 import { LoadingSpinnerComponent } from '../../../../shared/ui/loading-spinner/loading-spinner.component';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-list',
@@ -15,7 +16,7 @@ export class ListComponent {
   @Input() previousRoute: string = '';
   @Output() selectItemEvent = new EventEmitter<string>();
 
-  private location = inject(Location);
+  private router = inject(Router);
   isGrid: boolean = false;
 
   toggleGrid() {
@@ -27,13 +28,27 @@ export class ListComponent {
   }
 
   canBackNavigate(): boolean {
-    if (this.heading.includes('course') || this.heading.includes('year')) {
+    const currentRoute = this.router.url.substring(1);
+    const segments = currentRoute.split('/');
+    if (segments.length > 4) {
       return true;
     }
     return false;
   }
 
   backNavigate() {
-    this.location.back();
+    const currentRoute: string = this.router.url.substring(1);
+    const segments: string[] = currentRoute.split('/');
+    let newSegments: string[] = [];
+    // if in year list
+    if (segments.length == 7) {
+      newSegments = segments.slice(0, -2);
+      this.router.navigate(newSegments);
+    }
+    // if in course list
+    else if (segments.length == 5) {
+      newSegments = segments.slice(0, -1);
+      this.router.navigate(newSegments);
+    }
   }
 }
