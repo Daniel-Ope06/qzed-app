@@ -1,7 +1,8 @@
 import { CommonModule } from '@angular/common';
-import { Component, EventEmitter, Input, Output, inject } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output, inject } from '@angular/core';
 import { LoadingSpinnerComponent } from '../../../../shared/ui/loading-spinner/loading-spinner.component';
 import { Router } from '@angular/router';
+import { IsGridService } from './is-grid.service';
 
 @Component({
   selector: 'app-list',
@@ -10,17 +11,26 @@ import { Router } from '@angular/router';
   templateUrl: './list.component.html',
   styleUrl: './list.component.scss'
 })
-export class ListComponent {
+export class ListComponent implements OnInit {
   @Input({required: true}) items: {long:string, short:string, id:string}[] = [];
   @Input({required: true}) heading: string = '';
   @Input() previousRoute: string = '';
   @Output() selectItemEvent = new EventEmitter<string>();
 
   private router = inject(Router);
+  private isGridService = inject(IsGridService);
+
   isGrid: boolean = false;
+
+  ngOnInit(): void {
+    this.isGridService.isGrid.subscribe((isGrid) => {
+      this.isGrid = isGrid;
+    });
+  }
 
   toggleGrid() {
     this.isGrid = !this.isGrid;
+    this.isGridService.setIsGrid(this.isGrid);
   }
 
   returnId(id: string) {
