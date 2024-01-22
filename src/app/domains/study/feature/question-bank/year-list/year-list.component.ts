@@ -15,14 +15,16 @@ export class YearListComponent {
   @Output() selectYearEvent = new EventEmitter<string>();
 
   private questionService = inject(QuestionService);
+
   items: {long:string, short:string, id:string}[] = [];
-  heading: string = 'Select a year';;
+  heading: string = '';;
 
   async ngOnInit() {
     await this.questionService.getCourse(this.schoolId, this.courseId).then((course) => {
       for (const [key, value] of Object.entries(course!['years'])) {
         this.items.push({long: key, short: key, id: value as string});
       }
+      this.heading = course!['code'] + ' past papers & solutions';
     });
   }
 
