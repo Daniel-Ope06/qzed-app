@@ -1,5 +1,5 @@
 import { Injectable, inject } from '@angular/core';
-import { DocumentData, Firestore, collection, getDocs, orderBy, where, query } from '@angular/fire/firestore';
+import { DocumentData, Firestore, collection, getDocs, orderBy, where, query, doc, getDoc } from '@angular/fire/firestore';
 
 @Injectable({
   providedIn: 'root'
@@ -23,5 +23,12 @@ export class QuestionService {
     const querySnapshot = await getDocs(courseRef);
     const courses = querySnapshot.docs.map((doc) => doc.data());
     return courses;
+  }
+
+  async getCourse(schoolId: string, courseId: string) {
+    const courseDocRef = doc(this.firestore, 'schools', schoolId, 'courses', courseId);
+    const docSnap = await getDoc(courseDocRef);
+    const course = docSnap.data();
+    return course;
   }
 }
