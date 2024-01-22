@@ -24,7 +24,9 @@ export class YearListComponent {
       for (const [key, value] of Object.entries(course!['years'])) {
         this.items.push({long: key, short: key, id: value as string});
       }
-      this.heading = course!['code'] + ' past papers & solutions';
+      this.questionService.getSchoolName(this.schoolId).then((schoolName) => {
+        this.heading = `${course!['code']} past papers & solutions (${schoolName})`;
+      });
     });
   }
 
