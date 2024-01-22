@@ -18,6 +18,13 @@ export class QuestionService {
     return schools;
   }
 
+  async getSchoolName(schoolId: string) {
+    const schoolDocRef = doc(this.firestore, 'schools', schoolId);
+    const docSnap = await getDoc(schoolDocRef);
+    const school = docSnap.data();
+    return school!['full_name'];
+  }
+
   async getCourses(schoolId: string) {
     const courseRef = collection(this.firestore, 'schools', schoolId, 'courses');
     const querySnapshot = await getDocs(courseRef);
