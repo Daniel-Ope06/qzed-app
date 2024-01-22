@@ -12,15 +12,20 @@ import { ListComponent } from '../list/list.component';
 export class CourseListComponent {
   @Input({required: true}) schoolId: string = '';
   @Output() selectCourseEvent = new EventEmitter<string>();
+
   private questionService = inject(QuestionService);
+
   items: {long:string, short:string, id:string}[] = [];
-  heading: string = 'Select a course';
+  heading: string = '';
 
   async ngOnInit() {
     await this.questionService.getCourses(this.schoolId).then((courses) => {
       for (let course of courses) {
         this.items.push({long: course['name'], short: course['code'], id: course['id']});
       }
+    });
+    await this.questionService.getSchoolName(this.schoolId).then((schoolName) => {
+      this.heading = schoolName + ' courses';
     });
   }
 
