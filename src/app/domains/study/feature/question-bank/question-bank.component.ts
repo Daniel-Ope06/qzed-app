@@ -3,6 +3,7 @@ import { Router, RouterModule } from '@angular/router';
 import { SchoolListComponent } from './school-list/school-list.component';
 import { CourseListComponent } from './course-list/course-list.component';
 import { Subscription } from 'rxjs';
+import { YearListComponent } from './year-list/year-list.component';
 
 @Component({
   selector: 'question-bank',
@@ -25,6 +26,11 @@ export class QuestionBankComponent {
       const courseList = componentRef as CourseListComponent;
       this.subscription = courseList.selectCourseEvent.subscribe((courseId) => {
         this.routeToYearList(courseId);
+      });
+    } else if (componentRef instanceof YearListComponent) {
+      const yearList = componentRef as YearListComponent;
+      yearList.selectYearEvent.subscribe((yearURL) => {
+        window.open(yearURL, '_blank');
       });
     }
   }
