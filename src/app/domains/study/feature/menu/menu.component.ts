@@ -17,7 +17,6 @@ export class MenuComponent {
   menuItems: { [key: string]: { route: string; isSelected: boolean; title: string } } = {
     'dashboard': { route:'/dashboard', isSelected: false, title: 'Dashboard' },
     'question-bank': { route: '/question-bank', isSelected: false, title: 'Question Bank' },
-    'download': { route: '/download', isSelected: false, title: 'Download' }
   };
 
   isCollapsed: boolean = true;
@@ -27,7 +26,6 @@ export class MenuComponent {
   constructor() {
     this.router.events.subscribe((event) => {
       if (event instanceof NavigationEnd) {
-        // do something with event.url
         this.currentRoute = this.router.url.substring(1);
         this.initializeRoute();
       }
