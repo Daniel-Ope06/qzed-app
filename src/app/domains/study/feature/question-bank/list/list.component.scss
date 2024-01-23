@@ -79,6 +79,7 @@ $background-color: #ECEAEA;
         &:hover {
             border-color: #8B909A;
             svg path { fill: #8B909A }
+            .row-svg div { border-color: #8B909A; }
         }
     }
 }
