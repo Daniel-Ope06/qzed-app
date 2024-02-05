@@ -1,6 +1,6 @@
 import { Component, EventEmitter, Input, Output, inject } from '@angular/core';
 import { QuestionService } from '../../../data-access/question.service';
-import { ListComponent } from '../list/list.component';
+import { ListComponent } from '../../../../shared/ui/list/list.component';
 
 @Component({
   selector: 'app-year-list',

@@ -1,5 +1,5 @@
 import { Component, EventEmitter, OnInit, Output, inject } from '@angular/core';
-import { ListComponent } from '../list/list.component';
+import { ListComponent } from '../../../../shared/ui/list/list.component';
 import { QuestionService } from '../../../data-access/question.service';
 
 @Component({

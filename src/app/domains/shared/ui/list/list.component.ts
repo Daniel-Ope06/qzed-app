@@ -1,6 +1,6 @@
 import { CommonModule } from '@angular/common';
 import { Component, EventEmitter, Input, OnInit, Output, inject } from '@angular/core';
-import { LoadingSpinnerComponent } from '../../../../shared/ui/loading-spinner/loading-spinner.component';
+import { LoadingSpinnerComponent } from '../loading-spinner/loading-spinner.component';
 import { Router } from '@angular/router';
 import { IsGridService } from './is-grid.service';
 
