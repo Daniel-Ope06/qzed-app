@@ -40,7 +40,7 @@ export class ListComponent implements OnInit {
   canBackNavigate(): boolean {
     const currentRoute = this.router.url.substring(1);
     const segments = currentRoute.split('/');
-    if (segments.length > 4) {
+    if (segments.length >= 4) {
       return true;
     }
     return false;
@@ -51,12 +51,12 @@ export class ListComponent implements OnInit {
     const segments: string[] = currentRoute.split('/');
     let newSegments: string[] = [];
     // if in year list
-    if (segments.length == 7) {
+    if (segments.length == 6) {
       newSegments = segments.slice(0, -2);
       this.router.navigate(newSegments);
     }
     // if in course list
-    else if (segments.length == 5) {
+    else if (segments.length == 4) {
       newSegments = segments.slice(0, -1);
       this.router.navigate(newSegments);
     }

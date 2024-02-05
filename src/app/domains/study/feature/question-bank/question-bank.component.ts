@@ -45,14 +45,14 @@ export class QuestionBankComponent {
     const currentRoute = this.router.url.substring(1);
     const segments = currentRoute.split('/');
     const uid = segments[1];
-    this.router.navigate([`study/${uid}/question-bank/schools/${schoolId}`]);
+    this.router.navigate([`study/${uid}/question-bank/${schoolId}`]);
   }
 
   routeToYearList(courseId: string) {
     const currentRoute = this.router.url.substring(1);
     const segments = currentRoute.split('/');
     const uid = segments[1];
-    const schoolId = segments[4];
-    this.router.navigate([`study/${uid}/question-bank/schools/${schoolId}/courses/${courseId}`]);
+    const schoolId = segments[3];
+    this.router.navigate([`study/${uid}/question-bank/${schoolId}/courses/${courseId}`]);
   }
 }
