@@ -1,6 +1,6 @@
 import { Component, inject } from '@angular/core';
 import { Router, RouterModule } from '@angular/router';
-import { SchoolListComponent } from './school-list/school-list.component';
+import { SchoolListComponent } from '../../../shared/ui/school-list/school-list.component';
 import { CourseListComponent } from './course-list/course-list.component';
 import { Subscription } from 'rxjs';
 import { YearListComponent } from './year-list/year-list.component';

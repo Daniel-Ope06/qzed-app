@@ -1,6 +1,6 @@
 import { Component, EventEmitter, OnInit, Output, inject } from '@angular/core';
-import { ListComponent } from '../../../../shared/ui/list/list.component';
-import { QuestionService } from '../../../data-access/question.service';
+import { ListComponent } from '../list/list.component';
+import { QuestionService } from '../../../study/data-access/question.service';
 
 @Component({
   selector: 'app-school-list',

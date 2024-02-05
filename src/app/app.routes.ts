@@ -27,7 +27,7 @@ export const routes: Routes = [
                 loadComponent: () => import('./domains/study/feature/question-bank/question-bank.component').then(c => c.QuestionBankComponent),
                 children: [
                     { path: '', redirectTo: 'schools', pathMatch: 'full' },
-                    { path: 'schools', title: 'Schools | QZed', loadComponent: () => import('./domains/study/feature/question-bank/school-list/school-list.component').then(c => c.SchoolListComponent) },
+                    { path: 'schools', title: 'Schools | QZed', loadComponent: () => import('./domains/shared/ui/school-list/school-list.component').then(c => c.SchoolListComponent) },
                     { path: 'schools/:schoolId', title: 'Courses | QZed', loadComponent: () => import('./domains/study/feature/question-bank/course-list/course-list.component').then(c => c.CourseListComponent) },
                     { path: 'schools/:schoolId/courses/:courseId', title: 'Years | QZed', loadComponent: () => import('./domains/study/feature/question-bank/year-list/year-list.component').then(c => c.YearListComponent) },
                 ]
