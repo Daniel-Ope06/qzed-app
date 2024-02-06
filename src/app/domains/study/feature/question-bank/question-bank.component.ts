@@ -53,6 +53,6 @@ export class QuestionBankComponent {
     const segments = currentRoute.split('/');
     const uid = segments[1];
     const schoolId = segments[3];
-    this.router.navigate([`study/${uid}/question-bank/${schoolId}/courses/${courseId}`]);
+    this.router.navigate([`study/${uid}/question-bank/${schoolId}/${courseId}`]);
   }
 }
