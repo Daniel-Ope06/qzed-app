@@ -21,12 +21,10 @@ export class YearListComponent {
 
   async ngOnInit() {
     await this.questionService.getCourse(this.schoolId, this.courseId).then((course) => {
+      this.heading = `${course!['code']} past papers & solutions`;
       for (const [key, value] of Object.entries(course!['years'])) {
         this.items.push({long: key, short: key, id: value as string});
       }
-      this.questionService.getSchoolName(this.schoolId).then((schoolName) => {
-        this.heading = `${course!['code']} past papers & solutions (${schoolName})`;
-      });
     });
   }
 
