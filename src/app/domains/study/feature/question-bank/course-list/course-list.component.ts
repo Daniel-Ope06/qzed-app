@@ -19,13 +19,13 @@ export class CourseListComponent {
   heading: string = '';
 
   async ngOnInit() {
+    await this.questionService.getSchoolName(this.schoolId).then((schoolName) => {
+      this.heading = schoolName + ' courses';
+    });
     await this.questionService.getCourses(this.schoolId).then((courses) => {
       for (let course of courses) {
         this.items.push({long: course['name'], short: course['code'], id: course['id']});
       }
-    });
-    await this.questionService.getSchoolName(this.schoolId).then((schoolName) => {
-      this.heading = schoolName + ' courses';
     });
   }
 
