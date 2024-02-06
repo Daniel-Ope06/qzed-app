@@ -27,4 +27,8 @@ export class HeaderComponent implements OnInit {
       this.user['photoURL'] = userData['photo_url'];
     }
   }
+
+  replaceImage() {
+    this.user['photoURL'] = '../../../../../assets/study/cat.jpg';
+  }
 }
