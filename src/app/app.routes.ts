@@ -31,6 +31,11 @@ export const routes: Routes = [
                     { path: ':schoolId/:courseId', loadComponent: () => import('./domains/study/feature/question-bank/year-list/year-list.component').then(c => c.YearListComponent) },
                 ]
             },
+            {
+                path: 'quiz',
+                title: 'Quiz | QZed',
+                loadComponent: () => import('./domains/study/feature/quiz/quiz.component').then(c => c.QuizComponent),
+            },
         ]
     }
 ];

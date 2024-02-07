@@ -17,6 +17,7 @@ export class MenuComponent {
   menuItems: { [key: string]: { route: string; isSelected: boolean; title: string } } = {
     'dashboard': { route:'/dashboard', isSelected: false, title: 'Dashboard' },
     'question-bank': { route: '/question-bank', isSelected: false, title: 'Question Bank' },
+    'quiz': { route: '/quiz', isSelected: false, title: 'Quiz' }
   };
 
   isCollapsed: boolean = true;
