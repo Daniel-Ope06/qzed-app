@@ -26,7 +26,7 @@ export const routes: Routes = [
                 title: 'Question Bank | QZed',
                 loadComponent: () => import('./domains/study/feature/question-bank/question-bank.component').then(c => c.QuestionBankComponent),
                 children: [
-                    {path: '', loadComponent: () => import('./domains/shared/ui/school-list/school-list.component').then(c => c.SchoolListComponent)},
+                    { path: '', loadComponent: () => import('./domains/shared/ui/school-list/school-list.component').then(c => c.SchoolListComponent) },
                     { path: ':schoolId', loadComponent: () => import('./domains/study/feature/question-bank/course-list/course-list.component').then(c => c.CourseListComponent) },
                     { path: ':schoolId/:courseId', loadComponent: () => import('./domains/study/feature/question-bank/year-list/year-list.component').then(c => c.YearListComponent) },
                 ]
@@ -35,6 +35,9 @@ export const routes: Routes = [
                 path: 'quiz',
                 title: 'Quiz | QZed',
                 loadComponent: () => import('./domains/study/feature/quiz/quiz.component').then(c => c.QuizComponent),
+                children: [
+                    { path: '', loadComponent: () => import('./domains/shared/ui/school-list/school-list.component').then(c => c.SchoolListComponent) },
+                ]
             },
         ]
     }
