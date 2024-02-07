@@ -18,7 +18,7 @@ export class QuizComponent {
     if (componentRef instanceof SchoolListComponent) {
       const schoolList = componentRef as SchoolListComponent;
       schoolList.selectSchoolEvent.subscribe((schoolId) => {
-        //this.routeToCourseList(schoolId);
+        this.routeToQuizList(schoolId);
       });
     }
   }
@@ -27,5 +27,12 @@ export class QuizComponent {
     if (this.subscription) {
       this.subscription.unsubscribe();
     }
+  }
+
+  routeToQuizList(schoolId: string) {
+    const currentRoute = this.router.url.substring(1);
+    const segments = currentRoute.split('/');
+    const uid = segments[1];
+    this.router.navigate([`study/${uid}/quiz/${schoolId}`]);
   }
 }
