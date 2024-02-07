@@ -38,6 +38,7 @@ export const routes: Routes = [
                 children: [
                     { path: '', loadComponent: () => import('./domains/shared/ui/school-list/school-list.component').then(c => c.SchoolListComponent) },
                     { path: ':schoolId', loadComponent: () => import('./domains/study/feature/quiz/quiz-list/quiz-list.component').then(c => c.QuizListComponent) },
+                    { path: ':schoolId/:courseId', loadComponent: () => import('./domains/study/feature/quiz/quiz-test/quiz-test.component').then(c => c.QuizTestComponent) },
                 ]
             },
         ]
