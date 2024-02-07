@@ -1,10 +1,12 @@
 <div class="page-flex">
-    <div class="banner">
-        <div class="text-col">
-            <h1>Get Quizzed Up</h1>
-            <p>Sharpen your knowledge with our practice questions</p>
+    @if (!isQuizTestComponent()) {
+        <div class="banner">
+            <div class="text-col">
+                <h1>Get Quizzed Up</h1>
+                <p>Sharpen your knowledge with our practice questions</p>
+            </div>
+            <img class="image-col" src="../../../../../assets/study/quiz/buzzer-man.png" alt="buzzer-man"/>
         </div>
-        <img class="image-col" src="../../../../../assets/study/quiz/buzzer-man.png" alt="buzzer-man"/>
-    </div>
+    }
     <router-outlet (activate)="subscribeToEmitter($event)" (deactivate)="unsubscribeFromEmitter()"/>
 </div>
