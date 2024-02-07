@@ -1,1 +1,44 @@
-<p>quiz-instruction works!</p>
+<div class="page-flex">
+    <div class="instruction-container">
+        <div class="quiz-details">
+            <h1>{{ courseCode }}</h1>
+            <p>Brief explanation about this quiz</p>
+            <div class="list-item">
+                <div class="icon">
+                    <svg width="36" height="36" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M25.9049 30.24H10.4249C9.34485 30.24 8.47485 29.37 8.47485 28.29V8.92498C8.47485 7.84498 9.34485 6.97498 10.4249 6.97498H25.9049C26.9849 6.97498 27.8549 7.84498 27.8549 8.92498V28.29C27.8549 29.37 26.9849 30.24 25.9049 30.24Z" stroke="white" stroke-width="1.2" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path d="M13.605 15.645H19.725" stroke="white" stroke-width="1.2" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path d="M13.605 21.5701H22.725" stroke="white" stroke-width="1.2" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </div>
+                <div class="text">
+                    <h2>{{ numOfQuestions }} Question</h2>
+                    <p>{{ pointsPerQuestion }} points for a correct answer</p>
+                </div>
+            </div>
+            <div class="list-item">
+                <div class="icon">
+                    <svg width="36" height="36" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M18.6899 31.98C26.0298 31.98 31.9799 26.0299 31.9799 18.69C31.9799 11.3502 26.0298 5.40002 18.6899 5.40002C11.35 5.40002 5.3999 11.3502 5.3999 18.69C5.3999 26.0299 11.35 31.98 18.6899 31.98Z" stroke="white" stroke-width="1.2" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path d="M18.6899 11.4301V18.6901L23.1599 20.8201" stroke="white" stroke-width="1.2" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </div>
+                <div class="text">
+                    <h2>{{ timeInMins }} mins</h2>
+                    <p>Total duration of the quiz</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="quiz-guide">
+            <h3>Please read the text below carefully so you can understand it</h3>
+            <ul>
+                <li>{{ pointsPerQuestion }} points awarded for a correct answer and no marks for a incorrect answer</li>
+                <li>Tap on options to select the correct answer</li>
+                <li>Finish quizzes by clicking submit</li>
+            </ul>
+        </div>
+    </div>
+
+    <button class="blue-btn" type="button">Start Quiz</button>
+</div>

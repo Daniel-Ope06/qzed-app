@@ -1,0 +1,130 @@
+$breakpoint: 962px;
+
+.page-flex {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+
+.instruction-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+    width: 80%;
+    font-family: 'Poppins', sans-serif;
+
+    @media (max-width: $breakpoint) {
+        grid-template-columns: 100%;
+        gap: 3rem;
+        width: 100%;
+    }
+}
+
+
+.quiz-details {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+
+    h1 {
+        font-size: 4rem;
+        font-weight: 600;
+        color: black;
+        margin: 0;
+        margin-bottom: 1rem;
+    }
+
+    p {
+        font-size: 1.5rem;
+        font-weight: 600;
+        color: #333333;
+        margin: 0;
+    }
+
+    @media (max-width: $breakpoint) {
+        h1 {
+            font-size: 3rem;
+            margin-bottom: 0.5rem;
+        }
+    }
+}
+
+
+.list-item {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+
+    .icon {
+        width: 3.5rem;
+        height: 3.5rem;
+        border-radius: 50%;
+        background-color: #333333;
+
+        display: grid;
+        place-items: center;
+    }
+
+    .text {
+        display: flex;
+        flex-direction: column;
+
+        h2 {
+            font-size: 1.25rem;
+            font-weight: 500;
+            color: #333333;
+            margin: 0;
+        }
+
+        p {
+            font-size: 1rem;
+            font-weight: 400;
+            color: #999999;
+            margin: 0;
+        }
+    }
+}
+
+
+.quiz-guide {
+    h3 {
+        font-size: 1.5rem;
+        font-weight: 600;
+        color: #333333;
+        margin: 0;
+        margin-bottom: 1.25rem;
+    }
+
+    ul {
+        display: flex;
+        gap: 1rem;
+        flex-direction: column;
+        padding-left:   1rem;
+
+        li {
+            font-size: 1.25rem;
+            font-weight: 400;
+            color: #333333;
+            margin: 0;
+        }
+    }
+}
+
+
+.blue-btn {
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 0.5rem;
+    background-color: #002B59;
+
+    color: white;
+    font-weight: 400;
+    font-size: 1.25rem;
+    font-family: 'Poppins', sans-serif;
+
+    cursor: pointer;
+    transition: all 0.3s ease;
+    &:hover { background-color: lighten(#002B59, 5%); }
+}
