@@ -1,1 +1,31 @@
-<p>quiz-questions works!</p>
+<div class="page-grid">
+    @if (numOfQuestions > 0) {
+        <div class="quiz-header">
+            <h1>{{ courseCode }} Quiz</h1>
+            <p>Test your knowledge</p>
+        </div>
+    
+        <div class="question-grid">
+            @for (quiz of pool; track quiz; let i = $index) {
+                <div class="quiz">
+                    <div class="question">
+                        <p>{{ i+1 }}.</p>
+                        <p>{{ quiz['question'] }}</p>
+                    </div>
+                    <div class="option-grid">
+                        @for (option of quiz['options']; track option; let j = $index) {
+                            <div class="option" [class.selected]="option['isSelected']">
+                                <button type="button" (click)="selectOption(i, j)">{{ letters[j] }}</button>
+                                <p>{{ option['value'] }}</p>
+                            </div>
+                        }
+                    </div>
+                </div>
+            }
+        </div>
+    
+        <button class="submit-btn" type="button" (click)="submitQuiz()" [disabled]="!canSubmitQuiz">Submit Quiz</button>
+    } @else {
+        <loading-spinner/>
+    }
+</div>

@@ -1,0 +1,135 @@
+$breakpoint: 768px;
+
+.page-grid {
+    position: relative;
+    width: 100%;
+    display: grid;
+    gap: 1rem;
+    place-items: center;
+    grid-template-columns: 100%;
+    grid-template-rows: auto 1fr auto;
+    loading-spinner { height: 70svh; }
+}
+
+.quiz-header {
+    position: sticky;
+    top: 3rem;
+    width: 100%;
+    padding-top: 1.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: white;
+
+    h1 {
+        color: #1B1C1E;
+        font-size: 2rem;
+        font-weight: 600;
+        margin: 0;
+    }
+
+    @media (max-width: $breakpoint) {
+        top: 4rem;
+        padding-top: 0.5rem;
+    }
+}
+
+.question-grid {
+    width: 100%;
+    height: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    column-gap: 2rem;
+    row-gap: 3rem;
+
+    @media (max-width: $breakpoint) {
+        grid-template-columns: 100%;
+    }
+}
+
+.quiz {
+    display: flex;
+    gap: 2rem;
+    flex-direction: column;
+
+    .option-grid {
+        width: 100%;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 1rem;
+    }
+}
+
+.question {
+    display: flex;
+    gap: 0.5rem;
+
+    p {
+        color: #333333;
+        font-size: 1.25rem;
+        font-weight: 500;
+        margin: 0;
+    }
+}
+
+.option {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+
+    button {
+        height: 2rem;
+        width: 2rem;
+        border: none;
+        border-radius: 50%;
+
+        color: white;
+        font-size: 1.125rem;
+        font-weight: 500;
+
+        display: grid;
+        place-items: center;
+
+        cursor: pointer;
+        background: #D4D4D4;
+    }
+
+    p {
+        color: #333333;
+        font-size: 1rem;
+        font-weight: 400;
+        margin: 0;
+    }
+
+    &.selected {
+        button {
+            background: linear-gradient(to bottom right, #3550DC, #27E9F7);
+        }
+
+        p { color: #3550DC; }
+    }
+}
+
+.submit-btn {
+    border: none;
+    border-radius: 0.5rem;
+    background-color: #3550DC;
+
+    width: fit-content;
+    padding: 0.5rem 1rem;
+    margin-top: 2rem;
+
+    color: white;
+    font-weight: 400;
+    font-size: 1.25rem;
+    font-family: 'Poppins', sans-serif;
+
+    cursor: pointer;
+    transition: background-color 0.3s ease-out;
+    &:hover { background-color: lighten(#3550DC, 3%); }
+
+    &:disabled {
+        background-color: #D4D4D4;
+        cursor: not-allowed;
+    }
+}
