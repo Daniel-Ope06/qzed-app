@@ -31,7 +31,6 @@ export class QuizQuestionsComponent implements OnInit {
 
   canSubmitQuiz: boolean = false;
 
-
   async ngOnInit() {
     const currentRoute = this.router.url.substring(1);
     const segments = currentRoute.split('/');
@@ -49,17 +48,21 @@ export class QuizQuestionsComponent implements OnInit {
     });
   }
 
-
   initializePool() {
-    for (let quiz of this.quizPool) {
+    this.quizPool = this.shuffleArray(this.quizPool);
+
+    for (let i = 0; i < this.numOfQuestions; i++) {
+      let quiz = this.quizPool[i];
       let options: { value: string, isSelected: boolean }[] = [];
+      quiz['options'] = this.shuffleArray(quiz['options']);
+
       for (let option of quiz['options']) {
         options.push({ value: option, isSelected: false });
       }
+
       this.pool.push({ question: quiz['question'], answer: quiz['answer'], options: options });
     }
   }
-
 
   selectOption(questionIndex: number, optionIndex: number) {
     for (let option of this.pool[questionIndex]['options']) {
@@ -87,5 +90,13 @@ export class QuizQuestionsComponent implements OnInit {
     }
     let percentage = (score / this.numOfQuestions) * 100;
     this.submitQuizEvent.emit(percentage);
+  }
+
+  shuffleArray(array: any[]): any[] {
+    for (let i = array.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [array[i], array[j]] = [array[j], array[i]];
+    }
+    return array;
   }
 }
