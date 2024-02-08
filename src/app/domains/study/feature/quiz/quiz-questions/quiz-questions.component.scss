@@ -28,6 +28,17 @@ $breakpoint: 768px;
         margin: 0;
     }
 
+    p {
+        padding: 0.25rem 1.5rem;
+        border-radius: 100vw;
+        background-color: rgba(#3550DC, 0.3);
+
+        color: rgba(#3550DC, 0.7);
+        font-size: 1rem;
+        font-weight: 400;
+        margin: 0;
+    }
+
     @media (max-width: $breakpoint) {
         top: 4rem;
         padding-top: 0.5rem;
