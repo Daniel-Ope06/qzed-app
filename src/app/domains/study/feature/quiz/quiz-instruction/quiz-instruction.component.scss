@@ -2,9 +2,10 @@ $breakpoint: 962px;
 
 .page-flex {
     display: flex;
+    gap: 2rem;
     align-items: center;
     flex-direction: column;
-    gap: 2rem;
+    loading-spinner { height: 50svh; }
 }
 
 
