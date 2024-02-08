@@ -38,7 +38,15 @@ export const routes: Routes = [
                 children: [
                     { path: '', loadComponent: () => import('./domains/shared/ui/school-list/school-list.component').then(c => c.SchoolListComponent) },
                     { path: ':schoolId', loadComponent: () => import('./domains/study/feature/quiz/quiz-list/quiz-list.component').then(c => c.QuizListComponent) },
-                    { path: ':schoolId/:courseId', loadComponent: () => import('./domains/study/feature/quiz/quiz-test/quiz-test.component').then(c => c.QuizTestComponent) },
+                    {
+                        path: ':schoolId/:courseId',
+                        loadComponent: () => import('./domains/study/feature/quiz/quiz-test/quiz-test.component').then(c => c.QuizTestComponent),
+                        children: [
+                            { path: '', loadComponent: () => import('./domains/study/feature/quiz/quiz-instruction/quiz-instruction.component').then(c => c.QuizInstructionComponent) },
+                            { path: 'questions', loadComponent: () => import('./domains/study/feature/quiz/quiz-questions/quiz-questions.component').then(c => c.QuizQuestionsComponent) },
+                            { path: 'result', loadComponent: () => import('./domains/study/feature/quiz/quiz-result/quiz-result.component').then(c => c.QuizResultComponent) },
+                        ]
+                    },
                 ]
             },
         ]
