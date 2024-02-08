@@ -53,7 +53,7 @@ export class QuizComponent {
   isQuizTestComponent() {
     const currentRoute = this.router.url.substring(1);
     const segments = currentRoute.split('/');
-    if (segments.length === 5) {
+    if (segments.length >= 5) {
       return true;
     }
     return false;
