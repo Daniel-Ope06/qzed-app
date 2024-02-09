@@ -1,6 +1,6 @@
 import { Component, EventEmitter, Input, Output, inject } from '@angular/core';
 import { Router } from '@angular/router';
-import { QuestionService } from '../../../data-access/question.service';
+import { SchoolService } from '../../../data-access/school.service';
 import { LoadingSpinnerComponent } from '../../../../shared/ui/loading-spinner/loading-spinner.component';
 
 @Component({
@@ -14,7 +14,7 @@ export class QuizInstructionComponent {
   @Output() startQuizEvent = new EventEmitter<void>();
 
   private router = inject(Router);
-  private questionService = inject(QuestionService);
+  private schoolService = inject(SchoolService);
 
   courseCode: string = '';
   timeInMins: number = 0;
@@ -27,7 +27,7 @@ export class QuizInstructionComponent {
     const schoolId = segments[3];
     const courseId = segments[4];
 
-    await this.questionService.getCourse(schoolId, courseId).then((course) => {
+    await this.schoolService.getCourse(schoolId, courseId).then((course) => {
       this.courseCode = course!['code'];
       this.timeInMins = course!['quiz']['time_in_mins'];
       this.numOfQuestions = course!['quiz']['num_of_questions'];

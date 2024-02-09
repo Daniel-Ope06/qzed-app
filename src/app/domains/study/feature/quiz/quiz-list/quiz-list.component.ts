@@ -1,5 +1,5 @@
 import { Component, EventEmitter, Input, OnInit, Output, inject } from '@angular/core';
-import { QuestionService } from '../../../data-access/question.service';
+import { SchoolService } from '../../../data-access/school.service';
 import { ListComponent } from '../../../../shared/ui/list/list.component';
 
 @Component({
@@ -13,16 +13,16 @@ export class QuizListComponent implements OnInit {
   @Input({required: true}) schoolId: string = '';
   @Output() selectQuizEvent = new EventEmitter<string>();
 
-  private questionService = inject(QuestionService);
+  private schoolService = inject(SchoolService);
 
   items: {long:string, short:string, id:string}[] = [];
   heading: string = '';
 
   async ngOnInit() {
-    await this.questionService.getSchoolName(this.schoolId).then((schoolName) => {
+    await this.schoolService.getSchoolName(this.schoolId).then((schoolName) => {
       this.heading = schoolName + ' quizzes';
     });
-    await this.questionService.getCourses(this.schoolId).then((courses) => {
+    await this.schoolService.getCourses(this.schoolId).then((courses) => {
       for (let course of courses) {
         if (course['quiz']) {
           this.items.push({long: course['name'], short: course['code'], id: course['id']});

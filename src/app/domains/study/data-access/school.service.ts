@@ -4,7 +4,7 @@ import { DocumentData, Firestore, collection, getDocs, orderBy, where, query, do
 @Injectable({
   providedIn: 'root'
 })
-export class QuestionService {
+export class SchoolService {
   firestore: Firestore = inject(Firestore);
 
   async getSchools() {
