@@ -91,6 +91,7 @@ $breakpoint: 768px;
     button {
         height: 2rem;
         width: 2rem;
+        flex-shrink: 0;
         border: none;
         border-radius: 50%;
 
