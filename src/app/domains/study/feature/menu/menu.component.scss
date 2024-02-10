@@ -95,7 +95,8 @@ $breakpoint: 768px;
     font-size: 1rem;
     font-weight: light;
     color: $gray;
-    margin-top: 1.5rem;
+    margin-top: 2rem;
+    @media (max-width: $breakpoint) { margin-top: 0; }
 }
 
 .nav-list {
