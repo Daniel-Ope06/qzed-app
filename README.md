@@ -1,27 +1,37 @@
-# QzedApp
+# QZed - Your Ultimate Learning Companion
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 17.0.8.
+## Overview
+QZed is a comprehensive web app designed to assist students in their academic journey by providing access to past questions, solutions, practice quizzes, and fostering a collaborative community for Q&A. Whether you're preparing for exams, tests, or assignments, QZed has got you covered.
 
-## Development server
+## Features
+### Past Questions and Solutions (Beta):
+- Access a vast repository of past questions from different universities.
+- Detailed solutions to help you understand the concepts thoroughly
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+### Practice Quizzes (Alpha):
+- Sharpen your skills with interactive practice quizzes covering various subjects and difficulty levels.
 
-## Code scaffolding
+### Community for Q&A (Coming Soon):
+- Engage with a vibrant community of learners.
+- Ask questions, provide answers, and share insights.
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+### Profile Scores (Coming Soon):
+- Track your progress and achievements with a personalized profile score.
+- Earn points for completing quizzes, contributing to the community, and more.
 
-## Build
+## Connect with Us
+- Website: https://qzed.app/
+- Email: opeoluwaoyedeji06@gmail.com
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+## Screen Recording
+### Login
+![login](https://github.com/Daniel-Ope06/qzed-app/assets/97707320/8a679030-6efd-479d-9b8c-111b2e7dd8b5)
 
-## Running unit tests
+### Dashboaord
+![dashboard](https://github.com/Daniel-Ope06/qzed-app/assets/97707320/7e12891f-d7cb-46be-8702-48710c5d8b4b)
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+### Question Bank
+![question-bank](https://github.com/Daniel-Ope06/qzed-app/assets/97707320/4e35f8f2-4cf5-4ab9-b924-9edf65f2affc)
 
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+### Quiz
+![quiz](https://github.com/Daniel-Ope06/qzed-app/assets/97707320/3dbdc6a6-a5a8-4e85-81f2-1160929081c0)
