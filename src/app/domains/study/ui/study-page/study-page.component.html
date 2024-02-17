@@ -1,7 +1,7 @@
 <div class="page-grid">
     <app-menu (changeTabEvent)="receiveTab($event)"/>
     <div class="main-content">
-        <app-header [uid]="uid" [tabTitle]="title"/>
+        <app-header [tabTitle]="title"/>
         <router-outlet/>
     </div>
 </div>
