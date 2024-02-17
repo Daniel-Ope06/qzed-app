@@ -19,7 +19,8 @@ export class QuizComponent {
     if (componentRef instanceof SchoolListComponent) {
       const schoolList = componentRef as SchoolListComponent;
       schoolList.selectSchoolEvent.subscribe((schoolId) => {
-        this.routeToQuizList(schoolId);
+        // this.routeToQuizList(schoolId);
+        this.router.navigate([`study/quiz/${schoolId}`]);
       });
     } else if (componentRef instanceof QuizListComponent) {
       const quizList = componentRef as QuizListComponent;
@@ -38,22 +39,20 @@ export class QuizComponent {
   routeToQuizList(schoolId: string) {
     const currentRoute = this.router.url.substring(1);
     const segments = currentRoute.split('/');
-    const uid = segments[1];
-    this.router.navigate([`study/${uid}/quiz/${schoolId}`]);
+    this.router.navigate([`study/quiz/${schoolId}`]);
   }
 
   routeToQuizTest(courseId: string) {
     const currentRoute = this.router.url.substring(1);
     const segments = currentRoute.split('/');
-    const uid = segments[1];
-    const schoolId = segments[3];
-    this.router.navigate([`study/${uid}/quiz/${schoolId}/${courseId}`]);
+    const schoolId = segments[2];
+    this.router.navigate([`study/quiz/${schoolId}/${courseId}`]);
   }
 
   isQuizTestComponent() {
     const currentRoute = this.router.url.substring(1);
     const segments = currentRoute.split('/');
-    if (segments.length >= 5) {
+    if (segments.length >= 4) {
       return true;
     }
     return false;
