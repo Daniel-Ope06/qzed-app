@@ -24,8 +24,8 @@ export class QuizInstructionComponent {
   async ngOnInit() {
     const currentRoute = this.router.url.substring(1);
     const segments = currentRoute.split('/');
-    const schoolId = segments[3];
-    const courseId = segments[4];
+    const schoolId = segments[2];
+    const courseId = segments[3];
 
     await this.schoolService.getCourse(schoolId, courseId).then((course) => {
       this.courseCode = course!['code'];
