@@ -31,7 +31,7 @@ export class LoginComponent implements OnInit {
         return;
       }
       this.updateUserData(user);
-      this.router.navigate([`study/${user.uid}`]);
+      this.router.navigate(['study']);
     });
   }
 
@@ -50,7 +50,7 @@ export class LoginComponent implements OnInit {
     this.isLoading = true;
     signInAnonymously(this.auth).then((result) => {
       this.updateUserData(result.user);
-      this.router.navigate([`study/${result.user.uid}`]);
+      this.router.navigate(['study']);
     });
   }
 
