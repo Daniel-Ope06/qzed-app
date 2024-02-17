@@ -23,9 +23,8 @@ export class QuizResultComponent {
   routeToQuiz() {
     const currentRoute = this.router.url.substring(1);
     const segments = currentRoute.split('/');
-    const uid = segments[1];
-    const schoolId = segments[3];
-    const courseId = segments[4];
-    this.router.navigate([`study/${uid}/quiz/${schoolId}/${courseId}`]);
+    const schoolId = segments[2];
+    const courseId = segments[3];
+    this.router.navigate([`study/quiz/${schoolId}/${courseId}`]);
   }
 }
