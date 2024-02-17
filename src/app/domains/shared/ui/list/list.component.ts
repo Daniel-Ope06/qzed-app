@@ -40,7 +40,7 @@ export class ListComponent implements OnInit {
   canBackNavigate(): boolean {
     const currentRoute = this.router.url.substring(1);
     const segments = currentRoute.split('/');
-    if (segments.length >= 4) {
+    if (segments.length >= 3) {
       return true;
     }
     return false;
