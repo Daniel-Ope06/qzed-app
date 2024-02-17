@@ -22,7 +22,6 @@ export class MenuComponent {
 
   isCollapsed: boolean = true;
   currentRoute = this.router.url.substring(1);
-  uid: string = '';
 
   constructor() {
     this.router.events.subscribe((event) => {
@@ -47,7 +46,6 @@ export class MenuComponent {
       this.menuItems[key].isSelected = false;
     }
     const segments = this.currentRoute.split('/');
-    this.uid = segments[1];
     segments.forEach((segment) => {
       if (this.menuItems[segment]) {
         this.menuItems[segment].isSelected = true;
@@ -62,8 +60,7 @@ export class MenuComponent {
     }
     this.menuItems[selected].isSelected = true;
     this.changeTabEvent.emit(this.menuItems[selected].title);
-
     // update route
-    this.router.navigate([`study/${this.uid}/${selected}`]);
+    this.router.navigate([`study/${selected}`]);
   }
 }
