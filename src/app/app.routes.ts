@@ -13,7 +13,7 @@ export const routes: Routes = [
         loadComponent: () => import('./domains/login/ui/login-page/login-page.component').then(c => c.LoginPageComponent)
     },
     {
-        path: 'study/:uid',
+        path: 'study',
         title: 'Study | QZed',
         loadComponent: () => import('./domains/study/ui/study-page/study-page.component').then(c => c.StudyPageComponent),
         canActivate: [AuthGuard],
