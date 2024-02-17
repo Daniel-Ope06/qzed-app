@@ -12,7 +12,6 @@ import { RouterModule } from '@angular/router';
     imports: [DashboardComponent, HeaderComponent, MenuComponent, RouterModule]
 })
 export class StudyPageComponent {
-  @Input() uid: string = '';
   title: string = 'Dashboard';
 
   receiveTab(tabTitle: string) {
