@@ -19,11 +19,26 @@ QZed is a comprehensive web app designed to assist students in their academic jo
 - Track your progress and achievements with a personalized profile score.
 - Earn points for completing quizzes, contributing to the community, and more.
 
+## Getting Started
+To run the QZed (Angular 17) repo, follow these steps:
+1. Clone the Repository
+2. Install Dependencies:
+
+      ```bash
+      npm install
+      ```
+
+3.  Run the App:
+
+      ```bash
+      ng serve --open
+      ```
+
 ## Connect with Us
 - Website: https://qzed.app/
 - Email: opeoluwaoyedeji06@gmail.com
 
-## Screen Recording
+## Screen Recordings
 ### Login
 ![login](https://github.com/Daniel-Ope06/qzed-app/assets/97707320/8a679030-6efd-479d-9b8c-111b2e7dd8b5)
 
