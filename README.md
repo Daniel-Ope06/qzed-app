@@ -28,7 +28,12 @@ To run the QZed (Angular 17) repo, follow these steps:
       npm install
       ```
 
-3.  Run the App:
+3. Firebase Configuration:
+
+    The _**environment.ts**_ file containing Firebase configuration details is not provided in the public repository for security purposes.
+    Please reach out to opeoluwaoyedeji06@gmail.com to obtain the necessary configuration details. 
+
+5.  Run the App:
 
       ```bash
       ng serve --open
