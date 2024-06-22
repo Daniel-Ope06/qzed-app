@@ -1,0 +1,46 @@
+.nav-container {
+  //   border: 2px solid blue;
+  padding: 1.5rem 3.75rem;
+}
+
+.nav-flex {
+  //   border: 2px solid red;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.nav-flex img {
+  width: 10%;
+  object-fit: contain;
+}
+
+.nav-btn-row {
+  //   border: 2px solid green;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.trans-btn,
+.blue-btn {
+  font-weight: 400;
+  font-size: 1.125rem;
+  font-family: "Inter", sans-serif;
+  cursor: pointer;
+}
+
+.trans-btn {
+  border: none;
+  color: #0070e0;
+  padding: 0.625rem 0;
+  background-color: transparent;
+}
+
+.blue-btn {
+  color: #ffffff;
+  border-radius: 0.75rem;
+  padding: 0.625rem 0.75rem;
+  border: 1.5px solid #0070e0;
+  background-color: #0070e0;
+}
