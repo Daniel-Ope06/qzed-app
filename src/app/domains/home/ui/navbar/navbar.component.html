@@ -1,9 +1,14 @@
 <div class="nav-container">
   <div class="nav-flex">
-    <img src="../../../../../assets/shared/qzed-logo.png" />
-    <div class="nav-btn-row">
-      <button class="trans-btn">Login</button>
-      <button class="blue-btn">Sign Up</button>
+    <img id="logo" src="../../../../../assets/shared/qzed-logo.png" />
+
+    <button id="toggle-btn" (click)="toggle()">
+      <img src="../../../../../assets/shared/hamburger.png" />
+    </button>
+
+    <div class="nav-btn-row" [class.collapse]="isCollapsed">
+      <button id="trans-btn">Login</button>
+      <button id="blue-btn">Sign Up</button>
     </div>
   </div>
 </div>

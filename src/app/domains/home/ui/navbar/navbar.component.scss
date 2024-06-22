@@ -1,46 +1,109 @@
+$large-width: 1440px;
+$medium-width: 1024px;
+$small-width: 480px;
+
 .nav-container {
-  //   border: 2px solid blue;
+  position: relative;
   padding: 1.5rem 3.75rem;
+
+  @media (width > $large-width) {
+    width: $large-width;
+    margin-inline: auto;
+  }
+  @media (width <= $medium-width) {
+    padding: 1.5rem 2.75rem;
+  }
+  @media (width <= $small-width) {
+    padding: 1.5rem 1rem;
+  }
 }
 
 .nav-flex {
-  //   border: 2px solid red;
   display: flex;
   align-items: center;
   justify-content: space-between;
 }
 
-.nav-flex img {
+.nav-flex #logo {
   width: 10%;
   object-fit: contain;
+  @media (width <= $medium-width) {
+    width: 20%;
+  }
+  @media (width <= $small-width) {
+    width: 35%;
+  }
+}
+
+.nav-flex #toggle-btn {
+  display: none;
+  border: none;
+  padding: 0;
+  width: 2rem;
+  background-color: transparent;
+
+  img {
+    width: 100%;
+    object-fit: contain;
+  }
+
+  @media (width <= $small-width) {
+    display: block;
+  }
 }
 
 .nav-btn-row {
-  //   border: 2px solid green;
   display: flex;
   align-items: center;
   gap: 1rem;
+
+  @media (width <= $small-width) {
+    position: absolute;
+    left: 0;
+    top: 100%;
+    width: calc(100% - 2rem);
+    padding: 1rem;
+    height: 8rem;
+    align-items: flex-start;
+    flex-direction: column;
+    background-color: #ffffff;
+    transition: all ease-in-out 0.3s;
+    overflow: hidden;
+
+    &.collapse {
+      padding: 0 1rem;
+      height: 0;
+    }
+  }
 }
 
-.trans-btn,
-.blue-btn {
-  font-weight: 400;
+#trans-btn,
+#blue-btn {
+  border: none;
+  font-weight: 500;
   font-size: 1.125rem;
   font-family: "Inter", sans-serif;
+  transition: all ease-in 0.3s;
   cursor: pointer;
 }
 
-.trans-btn {
-  border: none;
+#trans-btn {
   color: #0070e0;
   padding: 0.625rem 0;
   background-color: transparent;
+
+  &:hover {
+    text-decoration: underline;
+  }
 }
 
-.blue-btn {
+#blue-btn {
   color: #ffffff;
   border-radius: 0.75rem;
-  padding: 0.625rem 0.75rem;
-  border: 1.5px solid #0070e0;
+  padding: 1rem 1.25rem;
   background-color: #0070e0;
+
+  &:hover {
+    background-color: darken(#0070e0, 5%);
+  }
 }
