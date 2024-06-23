@@ -1,0 +1,143 @@
+$large-width: 1440px;
+$medium-width: 1024px;
+$small-width: 480px;
+
+.blue-box {
+  padding: 3rem;
+  margin-inline: 3.75rem;
+  border-radius: 1.25rem;
+  background-color: #0059b3;
+
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  background-image: url("../../../../../assets/home/grid.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+
+  @media (width > $large-width) {
+    width: $large-width;
+    margin-inline: auto;
+  }
+  @media (width <= $medium-width) {
+    padding: 2rem;
+    margin-inline: 2.75rem;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto auto;
+    background-size: 200%;
+    background-repeat: repeat;
+  }
+  @media (width <= $small-width) {
+    padding: 1rem;
+    margin-inline: 1rem;
+  }
+}
+
+.girl-img {
+  width: 100%;
+  margin-inline: auto;
+  object-fit: contain;
+  @media (width <= $medium-width) {
+    grid-row-start: 1;
+  }
+}
+
+.text-column {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.clash-font {
+  margin: 0;
+  color: #ffffff;
+  font-weight: 600;
+  font-size: 3.5rem;
+  line-height: 5rem;
+  letter-spacing: -2%;
+  text-wrap: balance;
+  font-family: "Clash Display", sans-serif;
+  @media (width <= $medium-width) {
+    text-align: center;
+  }
+  @media (width <= $small-width) {
+    font-size: 2rem;
+    line-height: 2.5rem;
+  }
+}
+
+.clash-font #smiley {
+  font-size: 4.25rem;
+  position: relative;
+  @media (width <= $small-width) {
+    font-size: 3.25rem;
+  }
+}
+
+.clash-font #smiley img {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 35%;
+  object-fit: contain;
+  transform: translateX(-50%) translateY(-50%);
+}
+
+.clash-font #sparkle {
+  position: relative;
+}
+
+.clash-font #sparkle img {
+  position: absolute;
+  top: -50%;
+  left: 0;
+  height: 100%;
+  object-fit: contain;
+  transform: translateX(-10%);
+}
+
+.inter-font-1 {
+  margin: 0;
+  margin-top: 3rem;
+  color: #f1f1f1;
+  font-weight: 500;
+  font-size: 1.125rem;
+  line-height: 2rem;
+  letter-spacing: 1%;
+  font-family: "Inter", sans-serif;
+  @media (width <= $medium-width) {
+    text-align: center;
+    margin-top: 2rem;
+  }
+  @media (width <= $small-width) {
+    font-size: 0.875rem;
+  }
+}
+
+.btn-row {
+  margin-top: 2rem;
+  display: flex;
+  align-items: center;
+  @media (width <= $medium-width) {
+    flex-direction: column;
+  }
+}
+
+#orange-btn {
+  border: none;
+  color: #ffffff;
+  font-weight: 600;
+  font-size: 1.125rem;
+  font-family: "Inter", sans-serif;
+  background-color: #ff7f00;
+  border-radius: 0.75rem;
+  padding: 1rem 1.25rem;
+  transition: all ease-in 0.3s;
+  cursor: pointer;
+  &:hover {
+    background-color: darken(#ff7f00, 5%);
+  }
+  @media (width <= $medium-width) {
+    width: 100%;
+  }
+}
