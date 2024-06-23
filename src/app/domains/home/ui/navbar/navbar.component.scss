@@ -60,7 +60,7 @@ $small-width: 480px;
   @media (width <= $small-width) {
     position: absolute;
     left: 0;
-    top: 100%;
+    top: 99%;
     width: calc(100% - 2rem);
     padding: 1rem;
     height: 8rem;
