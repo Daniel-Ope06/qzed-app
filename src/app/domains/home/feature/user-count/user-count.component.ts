@@ -10,7 +10,7 @@ import { UserCountService } from '../../data-access/user-count.service';
 })
 export class UserCountComponent implements OnInit {
   userCountService: UserCountService = inject(UserCountService);
-  userCount: number = 0;
+  userCount: number = 50; // default number
 
   ngOnInit(): void {
     this.userCountService.getUserCount().then((userCount) => {
