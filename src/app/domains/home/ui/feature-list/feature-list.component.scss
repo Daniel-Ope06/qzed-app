@@ -83,6 +83,7 @@ $small-width: 480px;
   width: 2.5rem;
   border-radius: 0.5rem;
   background-color: #f37900;
+  flex-shrink: 0;
   display: grid;
   place-items: center;
   img {
