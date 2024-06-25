@@ -96,9 +96,9 @@ $small-width: 480px;
   transform: translateX(-10%);
 }
 
-.inter-font-1 {
+.inter-font {
   margin: 0;
-  margin-top: 3rem;
+  margin-top: 2rem;
   color: #f1f1f1;
   font-weight: 500;
   font-size: 1.125rem;
@@ -107,7 +107,6 @@ $small-width: 480px;
   font-family: "Inter", sans-serif;
   @media (width <= $medium-width) {
     text-align: center;
-    margin-top: 2rem;
   }
   @media (width <= $small-width) {
     font-size: 0.875rem;
@@ -117,6 +116,7 @@ $small-width: 480px;
 .btn-row {
   margin-top: 2rem;
   display: flex;
+  gap: 1rem;
   align-items: center;
   @media (width <= $medium-width) {
     flex-direction: column;
@@ -132,6 +132,7 @@ $small-width: 480px;
   background-color: #ff7f00;
   border-radius: 0.75rem;
   padding: 1rem 1.25rem;
+  flex-shrink: 0;
   transition: all ease-in 0.3s;
   cursor: pointer;
   &:hover {
