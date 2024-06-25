@@ -1,0 +1,112 @@
+$large-width: 1440px;
+$medium-width: 1024px;
+$small-width: 480px;
+
+.box {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  margin-inline: 3.75rem;
+  @media (width > $large-width) {
+    width: $large-width;
+    margin-inline: auto;
+  }
+  @media (width <= $medium-width) {
+    margin-inline: 2.75rem;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto auto;
+  }
+  @media (width <= $small-width) {
+    margin-inline: 1rem;
+  }
+}
+
+.girl-img {
+  width: 100%;
+  margin-inline: auto;
+  object-fit: contain;
+  @media (width <= $medium-width) {
+    grid-row-start: 1;
+  }
+}
+
+.text-column {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.clash-font {
+  margin: 0;
+  color: #0059b3;
+  font-weight: 600;
+  font-size: 3.25rem;
+  line-height: 3.875rem;
+  letter-spacing: -2%;
+  font-family: "Clash Display", sans-serif;
+  @media (width <= $small-width) {
+    font-size: 2rem;
+    line-height: 2.5rem;
+  }
+}
+
+.list {
+  margin-top: 3rem;
+  display: grid;
+  column-gap: 1.5rem;
+  row-gap: 2.5rem;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: auto auto;
+  @media (width <= $medium-width) {
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(auto, 4);
+  }
+  @media (width <= $small-width) {
+    margin-top: 2rem;
+    row-gap: 1.5rem;
+  }
+}
+
+.list-item {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.list-header {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.orange-icon {
+  height: 2.5rem;
+  width: 2.5rem;
+  border-radius: 0.5rem;
+  background-color: #f37900;
+  display: grid;
+  place-items: center;
+  img {
+    width: calc(100% - 1rem);
+    object-fit: contain;
+  }
+}
+
+.inter-font-heading {
+  margin: 0;
+  color: #000000;
+  font-weight: 600;
+  font-size: 1.5rem;
+  line-height: 1.8rem;
+  letter-spacing: -2%;
+  font-family: "Inter", sans-serif;
+}
+
+.inter-font-paragraph {
+  margin: 0;
+  color: #2d2d2d;
+  font-weight: 400;
+  font-size: 1rem;
+  line-height: 1.5rem;
+  letter-spacing: 1%;
+  font-family: "Inter", sans-serif;
+}
