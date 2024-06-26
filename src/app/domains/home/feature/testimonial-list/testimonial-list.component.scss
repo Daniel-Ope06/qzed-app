@@ -31,9 +31,6 @@ $small-width: 480px;
   flex-wrap: nowrap;
   justify-content: flex-start;
   animation: scrolling 60s linear infinite;
-  @media (width <= $small-width) {
-    animation: scrolling 80s linear infinite;
-  }
 }
 
 @keyframes scrolling {
