@@ -1,1 +1,23 @@
-<p>testimonial-list works!</p>
+<div class="scroll" #scroll>
+  <div class="inner-scroll" #innerScroll>
+    @for (testimonial of testimonials; track testimonial) {
+    <div class="list-item">
+      <div class="list-header">
+        <div class="profile-img">
+          <img src="../../../../../assets/home/profile-4.png" />
+        </div>
+        <div class="header-column">
+          <h3 class="inter-font-paragraph" id="heading">
+            Sophia L{{ testimonial }}
+          </h3>
+          <p class="inter-font-paragraph">University Student</p>
+        </div>
+      </div>
+      <p class="inter-font-paragraph">
+        The progress tracking features are excellent. I love how I can see my
+        improvement over time.
+      </p>
+    </div>
+    }
+  </div>
+</div>
