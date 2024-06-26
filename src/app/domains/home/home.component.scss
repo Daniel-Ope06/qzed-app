@@ -1,8 +1,55 @@
+$large-width: 1440px;
+$medium-width: 1024px;
+$small-width: 480px;
+
 .page {
   display: flex;
   flex-direction: column;
   gap: 3rem;
   hero {
     margin-top: -3rem;
+  }
+}
+
+#testimonials {
+  border: 2px solid red;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.clash-font {
+  margin: 0;
+  color: #0059b3;
+  font-weight: 600;
+  font-size: 3.25rem;
+  line-height: 3.875rem;
+  letter-spacing: -2%;
+  text-align: center;
+  text-wrap: balance;
+  width: calc(100% - 2rem);
+  font-family: "Clash Display", sans-serif;
+  @media (width <= $small-width) {
+    font-size: 2rem;
+    line-height: 2.5rem;
+  }
+}
+
+.inter-font-paragraph {
+  margin: 0;
+  color: #2d2d2d;
+  font-weight: 400;
+  font-size: 1rem;
+  line-height: 1.5rem;
+  letter-spacing: 1%;
+  font-family: "Inter", sans-serif;
+}
+
+#subheading {
+  width: 80%;
+  text-align: center;
+  @media (width <= $small-width) {
+    width: calc(100% - 2rem);
   }
 }
