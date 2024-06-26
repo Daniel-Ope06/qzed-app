@@ -31,6 +31,10 @@ $small-width: 480px;
   flex-wrap: nowrap;
   justify-content: flex-start;
   animation: scrolling 60s linear infinite;
+  animation-play-state: running;
+  &:hover {
+    animation-play-state: paused;
+  }
 }
 
 @keyframes scrolling {
