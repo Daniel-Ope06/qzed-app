@@ -1,4 +1,7 @@
 <div class="scroll" #scroll>
+  @if (testimonials.length != 12) {
+  <loading-spinner />
+  } @else {
   <div class="inner-scroll" #innerScroll>
     @for (testimonial of testimonials; track testimonial) {
     <div class="list-item">
@@ -7,17 +10,15 @@
           <img src="../../../../../assets/home/profile-4.png" />
         </div>
         <div class="header-column">
-          <h3 class="inter-font-paragraph" id="heading">
-            Sophia L{{ testimonial }}
+          <h3 class="inter-font-paragraph heading">
+            {{ testimonial.name }}
           </h3>
-          <p class="inter-font-paragraph">University Student</p>
+          <p class="inter-font-paragraph">{{ testimonial.occupation }}</p>
         </div>
       </div>
-      <p class="inter-font-paragraph">
-        The progress tracking features are excellent. I love how I can see my
-        improvement over time.
-      </p>
+      <p class="inter-font-paragraph">{{ testimonial.review }}</p>
     </div>
     }
   </div>
+  }
 </div>
