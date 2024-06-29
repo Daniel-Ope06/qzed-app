@@ -2,6 +2,12 @@ rules_version = '2';
 
 service cloud.firestore {
   match /databases/{database}/documents {
+  // Match any document in the 'faqs' collection
+   match /faqs/{faq} {
+    allow read: if true;
+    allow write: if false;
+   }
+   
   // Match any document in the 'testimonials' collection
    match /testimonials/{testimonial} {
     allow read: if true;
