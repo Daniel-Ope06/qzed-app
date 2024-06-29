@@ -1,0 +1,17 @@
+<div class="faq-list">
+  @if (faqs.length < 4) {
+  <loading-spinner />
+  } @else { @for (faq of faqs; track $index) {
+  <button
+    (click)="toggleCollapse($index)"
+    class="faq"
+    [class.collapse]="isFaqCollapsed[$index]"
+  >
+    <div class="question-row">
+      <h3 class="question">{{ faq.question }}</h3>
+      <img src="../../../../../assets/home/arrow-down.png" />
+    </div>
+    <p class="answer">{{ faq.answer }}</p>
+  </button>
+  } }
+</div>
