@@ -24,9 +24,16 @@ $small-width: 480px;
     transition: transform ease-in 0.3s;
   }
   &:first-child .answer {
+    height: 6rem;
+    @media (width <= $small-width) {
+      height: 9.25rem;
+    }
+  }
+
+  &:nth-child(3) .answer {
     height: 4rem;
     @media (width <= $small-width) {
-      height: 8rem;
+      height: 5.25rem;
     }
   }
 }
@@ -57,7 +64,7 @@ $small-width: 480px;
   transition: height ease-in 0.3s;
   overflow: hidden;
   @media (width <= $small-width) {
-    height: 4rem;
+    height: 3.25rem;
   }
 }
 
