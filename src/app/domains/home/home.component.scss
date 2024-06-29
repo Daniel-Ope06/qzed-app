@@ -83,11 +83,10 @@ $small-width: 480px;
 }
 
 #faq .img-col img {
-  width: 60%;
+  width: 70%;
   margin-inline: auto;
   object-fit: contain;
   @media (width <= $medium-width) {
-    width: 70%;
     grid-row-start: 1;
   }
   @media (width <= $small-width) {
