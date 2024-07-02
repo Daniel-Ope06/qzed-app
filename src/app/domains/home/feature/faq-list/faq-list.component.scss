@@ -42,10 +42,12 @@ $small-width: 480px;
   margin: 0;
   color: #0a0a0a;
   text-align: left;
+  text-wrap: balance;
   font-weight: 500;
   font-size: 1.5rem;
   line-height: 1.816rem;
   font-family: "Inter", sans-serif;
+  padding-right: 0.5rem;
   @media (width <= $small-width) {
     font-size: 1.25rem;
     line-height: 1.5rem;
@@ -69,8 +71,9 @@ $small-width: 480px;
 }
 
 .faq .question-row {
-  display: flex;
   width: 100%;
+  display: flex;
+  align-items: flex-start;
   justify-content: space-between;
 }
 

@@ -80,6 +80,9 @@ $small-width: 480px;
   grid-template-columns: 100%;
   grid-template-rows: auto auto;
   align-content: start;
+  @media (width <= $medium-width) {
+    row-gap: 1.5rem;
+  }
 }
 
 #faq .img-col img {
