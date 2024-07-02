@@ -102,3 +102,81 @@ $small-width: 480px;
     line-height: 2.5rem;
   }
 }
+
+#join {
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  margin-inline: 3.75rem;
+  margin-top: 2rem;
+  padding: 3rem;
+  border-radius: 3.712rem;
+  border: 1px solid #000000;
+  background-color: #0059b3;
+
+  @media (width > $large-width) {
+    width: $large-width;
+    margin-inline: auto;
+  }
+  @media (width <= $medium-width) {
+    margin-top: 1rem;
+    padding-inline: 2rem;
+    margin-inline: 2.75rem;
+  }
+  @media (width <= $small-width) {
+    border-radius: 1.5rem;
+    padding-inline: 1rem;
+    margin-inline: 1rem;
+  }
+}
+
+#join img {
+  width: 100%;
+  object-fit: cover;
+  aspect-ratio: 4.5 / 1;
+  margin-bottom: 1.5rem;
+}
+
+#join .inter-font-paragraph {
+  color: #ffffff;
+  text-align: center;
+  @media (width <= $small-width) {
+    font-size: 0.875rem;
+  }
+}
+
+#join .clash-font {
+  font-size: 2.5rem;
+  color: #ffffff;
+  @media (width <= $medium-width) {
+    font-size: 2rem;
+    line-height: 2.5rem;
+  }
+  @media (width <= $small-width) {
+    font-size: 1.5rem;
+    line-height: 2rem;
+  }
+}
+
+#white-btn {
+  border: none;
+  color: #0059b3;
+  font-weight: 600;
+  font-size: 1.125rem;
+  font-family: "Inter", sans-serif;
+  background-color: #ffffff;
+  border-radius: 0.75rem;
+  padding: 1rem 1.25rem;
+  margin-top: 1.5rem;
+  flex-shrink: 0;
+  transition: all ease-in 0.3s;
+  cursor: pointer;
+  &:hover {
+    color: #ff7f00;
+  }
+  @media (width <= $medium-width) {
+    width: 100%;
+  }
+}
